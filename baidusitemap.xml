@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.xonepage.com/plug-lottery/</loc>
+    <lastmod>2018-11-21T10:41:53.000Z</lastmod>
+  </url>  <url>
     <loc>http://blog.xonepage.com/js-promise/</loc>
     <lastmod>2018-11-14T01:54:25.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-url-param/</loc>
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-  </url>  <url>
-    <loc>http://blog.xonepage.com/css-triangle/</loc>
+    <loc>http://blog.xonepage.com/mac-git-mend/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/easyui-edit/</loc>
@@ -37,49 +37,49 @@
     <loc>http://blog.xonepage.com/js-object/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-update-countdown/</loc>
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-  </url>  <url>
-    <loc>http://blog.xonepage.com/ajax-js-jquery/</loc>
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-  </url>  <url>
     <loc>http://blog.xonepage.com/js-timestamp/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-upload-image/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-upload-qiniu/</loc>
+    <loc>http://blog.xonepage.com/js-url-param/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/ajax-js-plug/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/mac-git-mend/</loc>
+    <loc>http://blog.xonepage.com/js-update-countdown/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/note-hotkeys/</loc>
+    <loc>http://blog.xonepage.com/ajax-js-jquery/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/mac-phpredis/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/note-cmd/</loc>
+    <loc>http://blog.xonepage.com/js-upload-qiniu/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/plug-lottery/</loc>
+    <loc>http://blog.xonepage.com/note-cmd/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/react-ant-design/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/react-events/</loc>
+    <loc>http://blog.xonepage.com/note-hotkeys/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/react-push-load/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
+    <loc>http://blog.xonepage.com/css-triangle/</loc>
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+  </url>  <url>
     <loc>http://blog.xonepage.com/weixin-image/</loc>
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+  </url>  <url>
+    <loc>http://blog.xonepage.com/react-events/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/weixin-share/</loc>
