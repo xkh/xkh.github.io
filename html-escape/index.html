@@ -1,0 +1,1626 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="baidu-site-verification" content="lxfu2sEmyy">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="邢凯航的博客 邢凯航 Web前端博客 H5前端 ski的博客 xingkaihang xkh ski">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="HTML中，&amp;等有特殊含义（，用于链接签，&amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，那如果我们希望在网页中显示这些符号，该怎么办呢？这就要说到HTML转义字符串（Escape Sequence）了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html&#x2F;javascript转译字符串">
+<meta property="og:url" content="http://blog.xonepage.com/html-escape/index.html">
+<meta property="og:site_name" content="假面&#39;">
+<meta property="og:description" content="HTML中，&amp;等有特殊含义（，用于链接签，&amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，那如果我们希望在网页中显示这些符号，该怎么办呢？这就要说到HTML转义字符串（Escape Sequence）了。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-29T09:25:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html&#x2F;javascript转译字符串">
+<meta name="twitter:description" content="HTML中，&amp;等有特殊含义（，用于链接签，&amp;用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，那如果我们希望在网页中显示这些符号，该怎么办呢？这就要说到HTML转义字符串（Escape Sequence）了。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xonepage.com/html-escape/">
+
+
+
+
+
+  <title>html/javascript转译字符串 | 假面'</title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s13.cnzz.com/z_stat.php?id=1261962361&web_id=1261962361" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">假面'</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.xonepage.com/html-escape/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ski">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/portrait_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="假面'">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                html/javascript转译字符串
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-11T00:00:00+08:00">
+                2017-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/about/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/html-escape/" class="leancloud_visitors" data-flag-title="html/javascript转译字符串">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  HTML中<，>，&等有特殊含义（<，>，用于链接签，&用于转义），不能直接使用。这些符号是不显示在我们最终看到的网页里的，那如果我们希望在网页中显示这些符号，该怎么办呢？这就要说到HTML转义字符串（Escape Sequence）了。
+              </，></，></div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="【前言】"><a href="#【前言】" class="headerlink" title="【前言】"></a>【前言】</h3><blockquote>
+<p>转义字符（Escape Sequence）也称字符实体(Character Entity)。在HTML中，定义转义字符串的原因有两个：第一个原因是像“&lt;”和“&gt;”这类符号已经用来表示HTML标签，因此就不能直接当作文本中的符号来使用。为了在HTML文档中使用这些符号，就需要定义它的转义字符串。当解释程序遇到这类字符串时就把它解释为真实的字符。在输入转义字符串时，要严格遵守字母大小写的规则。第二个原因是，有些字符在ASCII字符集中没有定义，因此需要使用转义字符串来表示。</p>
+</blockquote>
+<h3 id="【转义字符串的组成】"><a href="#【转义字符串的组成】" class="headerlink" title="【转义字符串的组成】"></a>【转义字符串的组成】</h3><p>转义字符串（Escape Sequence），即字符实体（Character Entity）分成三部分：第一部分是一个&amp;符号，英文叫ampersand；第二部分是实体（Entity）名字或者是#加上实体（Entity）编号；第三部分是一个分号。</p>
+<p>比如，要显示小于号（&lt;），就可以写 &lt; 或者 &#60; 。</p>
+<p>用实体（Entity）名字的好处是比较好理解，一看lt，大概就猜出是less than的意思，但是其劣势在于并不是所有的浏览器都支持最新的Entity名字。而实体(Entity)编号，各种浏览器都能处理。</p>
+<blockquote>
+<p>提示：实体名称（Entity）是区分大小写的。<br>备注：同一个符号，可以用“实体名称”和“实体编号”两种方式引用，“实体名称”的优势在于便于记忆，但不能保证所有的浏览器都能顺利识别它，而“实体编号”则没有这种担忧，但它实在不方便记忆。</p>
+</blockquote>
+<h3 id="【转译符】"><a href="#【转译符】" class="headerlink" title="【转译符】"></a>【转译符】</h3><h4 id="HTML常用转义字符列表"><a href="#HTML常用转义字符列表" class="headerlink" title="HTML常用转义字符列表"></a>HTML常用转义字符列表</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">显示</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">实体名称</th>
+<th style="text-align:center">实体编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">半方大的空白</td>
+<td style="text-align:center"><code>&amp;ensp;</code></td>
+<td style="text-align:center"><code>&amp;#8194;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">全方大的空白</td>
+<td style="text-align:center"><code>&amp;emsp;</code></td>
+<td style="text-align:center"><code>&amp;#8195;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">不断行的空白格</td>
+<td style="text-align:center"><code>&amp;nbsp;</code></td>
+<td style="text-align:center"><code>&amp;#160;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">小于</td>
+<td style="text-align:center"><code>&amp;lt;</code></td>
+<td style="text-align:center"><code>&amp;#60;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">大于</td>
+<td style="text-align:center"><code>&amp;gt;</code></td>
+<td style="text-align:center"><code>&amp;#62;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">&amp;</td>
+<td style="text-align:center">&amp;符号</td>
+<td style="text-align:center"><code>&amp;amp;</code></td>
+<td style="text-align:center"><code>&amp;#38;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">“</td>
+<td style="text-align:center">双引号</td>
+<td style="text-align:center"><code>&amp;quot;</code></td>
+<td style="text-align:center"><code>&amp;#34;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">©</td>
+<td style="text-align:center">版权</td>
+<td style="text-align:center"><code>&amp;copy;</code></td>
+<td style="text-align:center"><code>&amp;#169;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">®</td>
+<td style="text-align:center">已注册商标</td>
+<td style="text-align:center"><code>&amp;reg;</code></td>
+<td style="text-align:center"><code>&amp;#174;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">商标（美国）</td>
+<td style="text-align:center"><code>?</code></td>
+<td style="text-align:center"><code>&amp;#8482;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">×</td>
+<td style="text-align:center">乘号</td>
+<td style="text-align:center"><code>&amp;times;</code></td>
+<td style="text-align:center"><code>&amp;#215;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">÷</td>
+<td style="text-align:center">除号</td>
+<td style="text-align:center"><code>&amp;divide;</code></td>
+<td style="text-align:center"><code>&amp;#247;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="ISO-8859-1-Latin-1-字符集"><a href="#ISO-8859-1-Latin-1-字符集" class="headerlink" title="ISO 8859-1 (Latin-1)字符集"></a>ISO 8859-1 (Latin-1)字符集</h4><p>HTML 4.01 支持 ISO 8859-1 (Latin-1) 字符集。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">显示</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">编号</th>
+<th style="text-align:center">显示</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">编号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>&amp;nbsp;</code></td>
+<td style="text-align:center"><code>&amp;#160;</code></td>
+<td style="text-align:center">¡</td>
+<td style="text-align:center"><code>&amp;iexcl;</code></td>
+<td style="text-align:center"><code>&amp;#161;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¥</td>
+<td style="text-align:center"><code>&amp;yen;</code></td>
+<td style="text-align:center"><code>&amp;#165;</code></td>
+<td style="text-align:center">¦</td>
+<td style="text-align:center"><code>&amp;brvbar;</code></td>
+<td style="text-align:center"><code>&amp;#166;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ª</td>
+<td style="text-align:center"><code>&amp;ordf;</code></td>
+<td style="text-align:center"><code>&amp;#170;</code></td>
+<td style="text-align:center">«</td>
+<td style="text-align:center"><code>&amp;laquo;</code></td>
+<td style="text-align:center"><code>&amp;#171;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¯</td>
+<td style="text-align:center"><code>&amp;macr;</code></td>
+<td style="text-align:center"><code>&amp;#175;</code></td>
+<td style="text-align:center">°</td>
+<td style="text-align:center"><code>&amp;deg;</code></td>
+<td style="text-align:center"><code>&amp;#176;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">´</td>
+<td style="text-align:center"><code>&amp;acute;</code></td>
+<td style="text-align:center"><code>&amp;#180;</code></td>
+<td style="text-align:center">µ</td>
+<td style="text-align:center"><code>&amp;micro;</code></td>
+<td style="text-align:center"><code>&amp;#181;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¹</td>
+<td style="text-align:center"><code>&amp;sup1;</code></td>
+<td style="text-align:center"><code>&amp;#185;</code></td>
+<td style="text-align:center">º</td>
+<td style="text-align:center"><code>&amp;ordm;</code></td>
+<td style="text-align:center"><code>&amp;#186;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¾</td>
+<td style="text-align:center"><code>&amp;frac34;</code></td>
+<td style="text-align:center"><code>&amp;#190;</code></td>
+<td style="text-align:center">¿</td>
+<td style="text-align:center"><code>&amp;iquest;</code></td>
+<td style="text-align:center"><code>&amp;#191;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ã</td>
+<td style="text-align:center"><code>&amp;Atilde;</code></td>
+<td style="text-align:center"><code>&amp;#195;</code></td>
+<td style="text-align:center">Ä</td>
+<td style="text-align:center"><code>&amp;Auml;</code></td>
+<td style="text-align:center"><code>&amp;#196;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">È</td>
+<td style="text-align:center"><code>&amp;Egrave;</code></td>
+<td style="text-align:center"><code>&amp;#200;</code></td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;Eacute;</code></td>
+<td style="text-align:center"><code>&amp;#201;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;Iacute;</code></td>
+<td style="text-align:center"><code>&amp;#205;</code></td>
+<td style="text-align:center">Î</td>
+<td style="text-align:center"><code>&amp;Icirc;</code></td>
+<td style="text-align:center"><code>&amp;#206;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ò</td>
+<td style="text-align:center"><code>&amp;Ograve;</code></td>
+<td style="text-align:center"><code>&amp;#210;</code></td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;Oacute;</code></td>
+<td style="text-align:center"><code>&amp;#211;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">×</td>
+<td style="text-align:center"><code>&amp;times;</code></td>
+<td style="text-align:center"><code>&amp;#215;</code></td>
+<td style="text-align:center">Ø</td>
+<td style="text-align:center"><code>&amp;Oslash;</code></td>
+<td style="text-align:center"><code>&amp;#216;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ü</td>
+<td style="text-align:center"><code>&amp;Uuml;</code></td>
+<td style="text-align:center"><code>&amp;#220;</code></td>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;Yacute;</code></td>
+<td style="text-align:center"><code>&amp;#221;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">á</td>
+<td style="text-align:center"><code>&amp;aacute;</code></td>
+<td style="text-align:center"><code>&amp;#225;</code></td>
+<td style="text-align:center">â</td>
+<td style="text-align:center"><code>&amp;acirc;</code></td>
+<td style="text-align:center"><code>&amp;#226;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">æ</td>
+<td style="text-align:center"><code>&amp;aelig;</code></td>
+<td style="text-align:center"><code>&amp;#230;</code></td>
+<td style="text-align:center">ç</td>
+<td style="text-align:center"><code>&amp;ccedil;</code></td>
+<td style="text-align:center"><code>&amp;#231;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ë</td>
+<td style="text-align:center"><code>&amp;euml;</code></td>
+<td style="text-align:center"><code>&amp;#235;</code></td>
+<td style="text-align:center">ì</td>
+<td style="text-align:center"><code>&amp;igrave;</code></td>
+<td style="text-align:center"><code>&amp;#236;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ð</td>
+<td style="text-align:center"><code>&amp;eth;</code></td>
+<td style="text-align:center"><code>&amp;#240;</code></td>
+<td style="text-align:center">ñ</td>
+<td style="text-align:center"><code>&amp;ntilde;</code></td>
+<td style="text-align:center"><code>&amp;#241;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">õ</td>
+<td style="text-align:center"><code>&amp;otilde;</code></td>
+<td style="text-align:center"><code>&amp;#245;</code></td>
+<td style="text-align:center">ö</td>
+<td style="text-align:center"><code>&amp;ouml;</code></td>
+<td style="text-align:center"><code>&amp;#246;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ú</td>
+<td style="text-align:center"><code>&amp;uacute;</code></td>
+<td style="text-align:center"><code>&amp;#250;</code></td>
+<td style="text-align:center">û</td>
+<td style="text-align:center"><code>&amp;ucirc;</code></td>
+<td style="text-align:center"><code>&amp;#251;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¢</td>
+<td style="text-align:center"><code>&amp;cent;</code></td>
+<td style="text-align:center"><code>&amp;#162;</code></td>
+<td style="text-align:center">£</td>
+<td style="text-align:center"><code>&amp;pound;</code></td>
+<td style="text-align:center"><code>&amp;#163;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">§</td>
+<td style="text-align:center"><code>&amp;sect;</code></td>
+<td style="text-align:center"><code>&amp;#167;</code></td>
+<td style="text-align:center">¨</td>
+<td style="text-align:center"><code>&amp;uml;</code></td>
+<td style="text-align:center"><code>&amp;#168;</code></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"><code>&amp;shy;</code></td>
+<td style="text-align:center"><code>&amp;#173;</code></td>
+<td style="text-align:center">®</td>
+<td style="text-align:center"><code>&amp;reg;</code></td>
+<td style="text-align:center"><code>&amp;#174;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ÿ</td>
+<td style="text-align:center"><code>&amp;yuml;</code></td>
+<td style="text-align:center"><code>&amp;#255;</code></td>
+<td style="text-align:center">¬</td>
+<td style="text-align:center"><code>&amp;not;</code></td>
+<td style="text-align:center"><code>&amp;#172;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">²</td>
+<td style="text-align:center"><code>&amp;sup2;</code></td>
+<td style="text-align:center"><code>&amp;#178;</code></td>
+<td style="text-align:center">³</td>
+<td style="text-align:center"><code>&amp;sup3;</code></td>
+<td style="text-align:center"><code>&amp;#179;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">·</td>
+<td style="text-align:center"><code>&amp;middot;</code></td>
+<td style="text-align:center"><code>&amp;#183;</code></td>
+<td style="text-align:center">¸</td>
+<td style="text-align:center"><code>&amp;cedil;</code></td>
+<td style="text-align:center"><code>&amp;#184;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¼</td>
+<td style="text-align:center"><code>&amp;frac14;</code></td>
+<td style="text-align:center"><code>&amp;#188;</code></td>
+<td style="text-align:center">½</td>
+<td style="text-align:center"><code>&amp;frac12;</code></td>
+<td style="text-align:center"><code>&amp;#189;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;Aacute;</code></td>
+<td style="text-align:center"><code>&amp;#193;</code></td>
+<td style="text-align:center">Â</td>
+<td style="text-align:center"><code>&amp;Acirc;</code></td>
+<td style="text-align:center"><code>&amp;#194;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Æ</td>
+<td style="text-align:center"><code>&amp;AElig;</code></td>
+<td style="text-align:center"><code>&amp;#198;</code></td>
+<td style="text-align:center">Ç</td>
+<td style="text-align:center"><code>&amp;Ccedil;</code></td>
+<td style="text-align:center"><code>&amp;#199;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ë</td>
+<td style="text-align:center"><code>&amp;Euml;</code></td>
+<td style="text-align:center"><code>&amp;#203;</code></td>
+<td style="text-align:center">Ì</td>
+<td style="text-align:center"><code>&amp;Igrave;</code></td>
+<td style="text-align:center"><code>&amp;#204;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ð</td>
+<td style="text-align:center"><code>&amp;ETH;</code></td>
+<td style="text-align:center"><code>&amp;#208;</code></td>
+<td style="text-align:center">Ñ</td>
+<td style="text-align:center"><code>&amp;Ntilde;</code></td>
+<td style="text-align:center"><code>&amp;#209;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Õ</td>
+<td style="text-align:center"><code>&amp;Otilde;</code></td>
+<td style="text-align:center"><code>&amp;#213;</code></td>
+<td style="text-align:center">Ö</td>
+<td style="text-align:center"><code>&amp;Ouml;</code></td>
+<td style="text-align:center"><code>&amp;#214;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;Uacute;</code></td>
+<td style="text-align:center"><code>&amp;#218;</code></td>
+<td style="text-align:center">Û</td>
+<td style="text-align:center"><code>&amp;Ucirc;</code></td>
+<td style="text-align:center"><code>&amp;#219;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ß</td>
+<td style="text-align:center"><code>&amp;szlig;</code></td>
+<td style="text-align:center"><code>&amp;#223;</code></td>
+<td style="text-align:center">à</td>
+<td style="text-align:center"><code>&amp;agrave;</code></td>
+<td style="text-align:center"><code>&amp;#224;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ä</td>
+<td style="text-align:center"><code>&amp;auml;</code></td>
+<td style="text-align:center"><code>&amp;#228;</code></td>
+<td style="text-align:center">å</td>
+<td style="text-align:center"><code>&amp;aring;</code></td>
+<td style="text-align:center"><code>&amp;#229;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">é</td>
+<td style="text-align:center"><code>&amp;eacute;</code></td>
+<td style="text-align:center"><code>&amp;#233;</code></td>
+<td style="text-align:center">ê</td>
+<td style="text-align:center"><code>&amp;ecirc;</code></td>
+<td style="text-align:center"><code>&amp;#234;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">î</td>
+<td style="text-align:center"><code>&amp;icirc;</code></td>
+<td style="text-align:center"><code>&amp;#238;</code></td>
+<td style="text-align:center">ï</td>
+<td style="text-align:center"><code>&amp;iuml;</code></td>
+<td style="text-align:center"><code>&amp;#239;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ó</td>
+<td style="text-align:center"><code>&amp;oacute;</code></td>
+<td style="text-align:center"><code>&amp;#243;</code></td>
+<td style="text-align:center">ô</td>
+<td style="text-align:center"><code>&amp;ocirc;</code></td>
+<td style="text-align:center"><code>&amp;#244;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ø</td>
+<td style="text-align:center"><code>&amp;oslash;</code></td>
+<td style="text-align:center"><code>&amp;#248;</code></td>
+<td style="text-align:center">ù</td>
+<td style="text-align:center"><code>&amp;ugrave;</code></td>
+<td style="text-align:center"><code>&amp;#249;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center"><code>&amp;yacute;</code></td>
+<td style="text-align:center"><code>&amp;#253;</code></td>
+<td style="text-align:center">þ</td>
+<td style="text-align:center"><code>&amp;thorn;</code></td>
+<td style="text-align:center"><code>&amp;#254;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">±</td>
+<td style="text-align:center"><code>&amp;plusmn;</code></td>
+<td style="text-align:center"><code>&amp;#177;</code></td>
+<td style="text-align:center">¶</td>
+<td style="text-align:center"><code>&amp;para;</code></td>
+<td style="text-align:center"><code>&amp;#182;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">»</td>
+<td style="text-align:center"><code>&amp;raquo;</code></td>
+<td style="text-align:center"><code>&amp;#187;</code></td>
+<td style="text-align:center">À</td>
+<td style="text-align:center"><code>&amp;Agrave;</code></td>
+<td style="text-align:center"><code>&amp;#192;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Å</td>
+<td style="text-align:center"><code>&amp;Aring;</code></td>
+<td style="text-align:center"><code>&amp;#197;</code></td>
+<td style="text-align:center">Ê</td>
+<td style="text-align:center"><code>&amp;Ecirc;</code></td>
+<td style="text-align:center"><code>&amp;#202;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ï</td>
+<td style="text-align:center"><code>&amp;Iuml;</code></td>
+<td style="text-align:center"><code>&amp;#207;</code></td>
+<td style="text-align:center">Ô</td>
+<td style="text-align:center"><code>&amp;Ocirc;</code></td>
+<td style="text-align:center"><code>&amp;#212;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">Ù</td>
+<td style="text-align:center"><code>&amp;Ugrave;</code></td>
+<td style="text-align:center"><code>&amp;#217;</code></td>
+<td style="text-align:center">Þ</td>
+<td style="text-align:center"><code>&amp;THORN;</code></td>
+<td style="text-align:center"><code>&amp;#222;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">ã</td>
+<td style="text-align:center"><code>&amp;atilde;</code></td>
+<td style="text-align:center"><code>&amp;#227;</code></td>
+<td style="text-align:center">è</td>
+<td style="text-align:center"><code>&amp;egrave;</code></td>
+<td style="text-align:center"><code>&amp;#232;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">í</td>
+<td style="text-align:center"><code>&amp;iacute;</code></td>
+<td style="text-align:center"><code>&amp;#237;</code></td>
+<td style="text-align:center">ò</td>
+<td style="text-align:center"><code>&amp;ograve;</code></td>
+<td style="text-align:center"><code>&amp;#242;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">÷</td>
+<td style="text-align:center"><code>&amp;divide;</code></td>
+<td style="text-align:center"><code>&amp;#247;</code></td>
+<td style="text-align:center">ü</td>
+<td style="text-align:center"><code>&amp;uuml;</code></td>
+<td style="text-align:center"><code>&amp;#252;</code></td>
+</tr>
+<tr>
+<td style="text-align:center">¤</td>
+<td style="text-align:center"><code>&amp;curren;</code></td>
+<td style="text-align:center"><code>&amp;#164;</code></td>
+<td style="text-align:center">©</td>
+<td style="text-align:center"><code>&amp;copy;</code></td>
+<td style="text-align:center"><code>&amp;#169;</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="JavaScript转义符"><a href="#JavaScript转义符" class="headerlink" title="JavaScript转义符"></a>JavaScript转义符</h4><table>
+<thead>
+<tr>
+<th>转义序列</th>
+<th>字符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>走纸换页</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>横向跳格 (Ctrl-I)</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>反斜杠</td>
+</tr>
+</tbody>
+</table>
+<h4 id="JavaScript编码转换"><a href="#JavaScript编码转换" class="headerlink" title="JavaScript编码转换"></a>JavaScript编码转换</h4><p><a href="http://www.w3school.com.cn/jsref/jsref_escape.asp" target="_blank" rel="noopener">escape()</a>,<br><a href="http://www.w3school.com.cn/jsref/jsref_encodeuri.asp" target="_blank" rel="noopener">encodeURI()</a>,<br><a href="http://www.w3school.com.cn/jsref/jsref_encodeURIComponent.asp" target="_blank" rel="noopener">encodeURIComponent()</a></p>
+<blockquote>
+<p>通过对三个函数的分析，我们可以知道：escape()除了 ASCII 字母、数字和特定的符号外，对传进来的字符串全部进行转义编码，因此如果想对URL编码，最好不要使用此方法。而encodeURI() 用于编码整个URI,因为URI中的合法字符都不会被编码转换。encodeURIComponent方法在编码单个URIComponent（指请求参 数）应当是最常用的，它可以讲参数中的中文、特殊字符进行转义，而不会影响整个URL。</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/reward/wechat-pay.png" alt="ski WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js-url-param/" rel="next" title="获取url参数">
+                <i class="fa fa-chevron-left"></i> 获取url参数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/react-push-load/" rel="prev" title="react下拉加载(移动端)">
+                react下拉加载(移动端) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/portrait_1.jpg" alt="ski">
+          <p class="site-author-name" itemprop="name">ski</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="http://www.xonepage.com/" target="_blank" title="Intro">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Intro
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://git.oschina.net/xkh" target="_blank" title="GitOs">
+                  
+                    <i class="fa fa-fw fa-github-alt"></i>
+                  
+                  GitOs
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.edlad.com/" title="edLad" target="_blank">edLad</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xonepage.com/" title="me" target="_blank">me</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【前言】"><span class="nav-number">1.</span> <span class="nav-text">【前言】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【转义字符串的组成】"><span class="nav-number">2.</span> <span class="nav-text">【转义字符串的组成】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【转译符】"><span class="nav-number">3.</span> <span class="nav-text">【转译符】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML常用转义字符列表"><span class="nav-number">3.1.</span> <span class="nav-text">HTML常用转义字符列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ISO-8859-1-Latin-1-字符集"><span class="nav-number">3.2.</span> <span class="nav-text">ISO 8859-1 (Latin-1)字符集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript转义符"><span class="nav-number">3.3.</span> <span class="nav-text">JavaScript转义符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript编码转换"><span class="nav-number">3.4.</span> <span class="nav-text">JavaScript编码转换</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ski</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" rel="external nofollow" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aWzs2xJ7wJMGwPKkNEI6VGLA-gzGzoHsz", "Sv0OFa34rCmPrkkFINnAGYWi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

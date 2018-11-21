@@ -1,0 +1,1128 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="baidu-site-verification" content="lxfu2sEmyy">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="邢凯航的博客 邢凯航 Web前端博客 H5前端 ski的博客 xingkaihang xkh ski">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="meta是html语言head区的一个辅助性标签，大多时候不被重视，如果你能够用好meta标签，会给你带来意想不到的效果！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html-meta">
+<meta property="og:url" content="http://blog.xonepage.com/html-meta/index.html">
+<meta property="og:site_name" content="假面&#39;">
+<meta property="og:description" content="meta是html语言head区的一个辅助性标签，大多时候不被重视，如果你能够用好meta标签，会给你带来意想不到的效果！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-29T09:25:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html-meta">
+<meta name="twitter:description" content="meta是html语言head区的一个辅助性标签，大多时候不被重视，如果你能够用好meta标签，会给你带来意想不到的效果！">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xonepage.com/html-meta/">
+
+
+
+
+
+  <title>html-meta | 假面'</title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s13.cnzz.com/z_stat.php?id=1261962361&web_id=1261962361" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">假面'</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.xonepage.com/html-meta/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ski">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/portrait_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="假面'">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                html-meta
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T00:00:00+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/about/html/" itemprop="url" rel="index">
+                    <span itemprop="name">html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/html-meta/" class="leancloud_visitors" data-flag-title="html-meta">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  meta是html语言head区的一个辅助性标签，大多时候不被重视，如果你能够用好meta标签，会给你带来意想不到的效果！
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>meta标签的作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等等<br>meta标签的组成：meta标签共有两个属性，它们分别是http-equiv属性和name属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
+</blockquote>
+<h3 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h3><h4 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h4><p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"参数"</span> <span class="attribute">content</span>=<span class="string">"具体的参数值"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="1-Keywords-关键字"><a href="#1-Keywords-关键字" class="headerlink" title="1.Keywords(关键字)"></a>1.Keywords(关键字)</h5><p>keywords用来告诉搜索引擎你网页的关键字是什么。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"keywords"</span> <span class="attribute">content</span>=<span class="string">"meta总结, html meta, meta属性, meta跳转"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-description-网站内容描述"><a href="#2-description-网站内容描述" class="headerlink" title="2.description(网站内容描述)"></a>2.description(网站内容描述)</h5><p>description用来告诉搜索引擎你的网站主要内容。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"description"</span> <span class="attribute">content</span>=<span class="string">"邢凯航的博客, 前端博客, html-meta的应用"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-viewport-窗口配置"><a href="#3-viewport-窗口配置" class="headerlink" title="3.viewport(窗口配置)"></a>3.viewport(窗口配置)</h5><p>浏览器窗口的显示配置(在移动端较常用)，它要解决的问题是无视设备的真实分辨率，直接通过dpi，在物理尺寸和浏览器之间重设分辨率，这个分辨率和设备的分辨率无关。<br>一些基本的需求这里的配置都可以满足，如果遇到较复杂的兼容问题请见下文【参考文献】<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"viewport"</span> <span class="attribute">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>具体参数：</strong><br>width：控制 viewport 的大小，可以指定的一个值，如果 600，或者特殊的值，如 device-width 为设备的宽度（单位为缩放为 100% 时的 CSS 的像素）。<br>height：和 width 相对应，指定高度。<br>initial-scale：初始缩放比例，也即是当页面第一次 load 的时候缩放比例。<br>maximum-scale：允许用户缩放到的最大比例。<br>minimum-scale：允许用户缩放到的最小比例。<br>user-scalable：用户是否可以手动缩放</p>
+<h5 id="4-robots-机器人向导"><a href="#4-robots-机器人向导" class="headerlink" title="4.robots(机器人向导)"></a>4.robots(机器人向导)</h5><p>robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"robots"</span> <span class="attribute">content</span>=<span class="string">"none"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>具体参数：</strong><br>all：文件将被检索，且页面上的链接可以被查询；<br>none：文件将不被检索，且页面上的链接不可以被查询；<br>index：文件将被检索；<br>follow：页面上的链接可以被查询；<br>noindex：文件将不被检索，但页面上的链接可以被查询；<br>nofollow：文件将被检索，但页面上的链接不可以被查询；</p>
+<h5 id="5-author-作者"><a href="#5-author-作者" class="headerlink" title="5.author(作者)"></a>5.author(作者)</h5><p>标注网页的作者<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"author"</span> <span class="attribute">content</span>=<span class="string">"root, xingkaihang@aliyun.com"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="6-generator"><a href="#6-generator" class="headerlink" title="6.generator"></a>6.generator</h5><p>meta标签的generator的信息参数，代表说明网站的采用的什么软件制作。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"generator"</span> <span class="attribute">content</span>=<span class="string">"信息参数"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="7-copyright"><a href="#7-copyright" class="headerlink" title="7.copyright"></a>7.copyright</h5><p>meta标签的COPYRIGHT的信息参数，代表说明网站版权信息。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"copyright"</span> <span class="attribute">content</span>=<span class="string">"信息参数"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="8-revisit-after"><a href="#8-revisit-after" class="headerlink" title="8.revisit-after"></a>8.revisit-after</h5><p>revisit-after代表网站重访,7days代表7天，依此类推。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">name</span>=<span class="string">"revisit-after"</span> <span class="attribute">content</span>=<span class="string">"7days"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="http-equiv属性"><a href="#http-equiv属性" class="headerlink" title="http-equiv属性"></a>http-equiv属性</h4><p>http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"参数"</span> <span class="attribute">content</span>=<span class="string">"参数变量值"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="1-Expires-期限"><a href="#1-Expires-期限" class="headerlink" title="1.Expires(期限)"></a>1.Expires(期限)</h5><p>可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。(必须使用GMT的时间格式，0表示立即过期)<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"expires"</span> <span class="attribute">content</span>=<span class="string">"Fri,12Jan200118:18:18GMT"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="2-Pragma-cache模式"><a href="#2-Pragma-cache模式" class="headerlink" title="2.Pragma(cache模式)"></a>2.Pragma(cache模式)</h5><p>禁止浏览器从本地计算机的缓存中访问页面内容。(这样设定，访问者将无法脱机浏览)<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Pragma"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="3-Cache-Control指定请求和响应遵循的缓存机制。"><a href="#3-Cache-Control指定请求和响应遵循的缓存机制。" class="headerlink" title="3.Cache-Control指定请求和响应遵循的缓存机制。"></a>3.Cache-Control指定请求和响应遵循的缓存机制。</h5><p>常见的取值有private、no-cache、max-age、must-revalidate等，默认为private。</p>
+<p><strong>其作用根据不同的重新浏览方式分为以下几种情况：</strong></p>
+<ul>
+<li>打开新窗口 值为private、no-cache、must-revalidate，那么打开新窗口访问时都会重新访问服务器。 而如果指定了max-age值，那么在此值内的时间里就不会重新访问服务器，例如： Cache-control: max-age=5(表示当访问此网页后的5秒内再次访问不会去服务器) </li>
+<li>在地址栏回车 值为private或must-revalidate则只有第一次访问时会访问服务器，以后就不再访问。 值为no-cache，那么每次都会访问。 值为max-age，则在过期之前不会重复访问。</li>
+<li>按后退按扭 值为private、must-revalidate、max-age，则不会重访问， 值为no-cache，则每次都重复访问 </li>
+<li>按刷新按扭 无论为何值，都会重复访问 Cache-control值为“no-cache”时，访问此页面不会在Internet临时文件夹留下页面备份。</li>
+</ul>
+<p><strong>具体参数：</strong><br>Public：指示响应可被任何缓存区缓存<br>Private：指示对于单个用户的整个或部分响应消息，不能被共享缓存处理。这允许服务器仅仅描述当用户的部分响应消息，此响应消息对于其他用户的请求无效<br>no-cache：指示请求或响应消息不能缓存<br>no-store：用于防止重要的信息被无意的发布。在请求消息中发送将使得请求和响应消息都不使用缓存<br>max-age：指示客户机可以接收生存期不大于指定时间（以秒为单位）的响应<br>min-fresh：指示客户机可以接收响应时间小于当前时间加上指定时间的响应<br>max-stale：指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。</p>
+<h5 id="4-Refresh-刷新"><a href="#4-Refresh-刷新" class="headerlink" title="4.Refresh(刷新)"></a>4.Refresh(刷新)</h5><p>自动刷新并指向新页面。(其中的2是指停留2秒钟后自动刷新到URL网址)<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Refresh"</span> <span class="attribute">content</span>=<span class="string">"2; URL=http://www.haorooms.com"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="5-Set-Cookie-cookie设定"><a href="#5-Set-Cookie-cookie设定" class="headerlink" title="5.Set-Cookie(cookie设定)"></a>5.Set-Cookie(cookie设定)</h5><p>如果网页过期，那么存盘的cookie将被删除。(必须使用GMT的时间格式)<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attr">http-equiv="Set-Cookie"</span> <span class="attr">content="cookie</span> <span class="attr">value=xxx;</span> <span class="attr">expires=Friday,12-Jan-200118:18:18GMT;</span> <span class="attr">path=/"&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="6-Window-target-显示窗口的设定"><a href="#6-Window-target-显示窗口的设定" class="headerlink" title="6.Window-target(显示窗口的设定)"></a>6.Window-target(显示窗口的设定)</h5><p>强制页面在当前窗口以独立页面显示。(用来防止别人在框架里调用自己的页面)<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Window-target"</span> <span class="attribute">content</span>=<span class="string">"_top"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="7-content-Type-显示字符集的设定"><a href="#7-content-Type-显示字符集的设定" class="headerlink" title="7.content-Type(显示字符集的设定)"></a>7.content-Type(显示字符集的设定)</h5><p>设定页面使用的字符集。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"content-Type"</span> <span class="attribute">content</span>=<span class="string">"text/html; charset=gb2312"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>具体参数：</strong><br>GB2312：简体中文<br>BIG5：繁体中文<br>iso-2022-jp：日文<br>ks_c_5601：韩文<br>ISO-8859-1：英文<br>UTF-8：通用</p>
+<h5 id="8-content-Language（显示语言的设定）"><a href="#8-content-Language（显示语言的设定）" class="headerlink" title="8.content-Language（显示语言的设定）"></a>8.content-Language（显示语言的设定）</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Content-Language"</span> <span class="attribute">content</span>=<span class="string">"zh-cn"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="9-imagetoolbar"><a href="#9-imagetoolbar" class="headerlink" title="9.imagetoolbar"></a>9.imagetoolbar</h5><p>指定是否显示图片工具栏，当为false代表不显示，当为true代表显示。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"imagetoolbar"</span> <span class="attribute">content</span>=<span class="string">"false"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="10-Content-Script-Type"><a href="#10-Content-Script-Type" class="headerlink" title="10.Content-Script-Type"></a>10.Content-Script-Type</h5><p>W3C网页规范，指明页面中脚本的类型。<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Content-Script-Type"</span> <span class="attribute">Content</span>=<span class="string">"text/javascript"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="11-页面过度效果-ie有效"><a href="#11-页面过度效果-ie有效" class="headerlink" title="11.页面过度效果(ie有效)"></a>11.页面过度效果(ie有效)</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"Page-Enter"</span> <span class="attribute">content</span>=<span class="string">"revealTrans(Duration=2.0,Transition=12)"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>声明参数：</strong><br>Page-Enter：进入页面<br>Page-Exit：离开页面<br>Site-Enter：进入网站<br>Site-Exit：离开网站<br><strong>内容参数：</strong><br>Duration  : 过渡速度<br>Transition : 可选项。整数值(Integer)。设置或检索转换所使用的方式<br><strong>具体参数：</strong><br>0：矩形收缩转换。<br>1：矩形扩张转换。<br>2：圆形收缩转换。<br>3：圆形扩张转换。<br>4：向上擦除。<br>5：向下擦除。<br>6：向右擦除。<br>7：向左擦除。<br>8：纵向百叶窗转换。<br>9：横向百叶窗转换。<br>10：国际象棋棋盘横向转换。<br>11：国际象棋棋盘纵向转换。<br>12：随机杂点干扰转换。<br>13：左右关门效果转换。<br>14：左右开门效果转换。<br>15：上下关门效果转换。<br>16：上下开门效果转换。<br>17：从右上角到左下角的锯齿边覆盖效果转换。<br>18：从右下角到左上角的锯齿边覆盖效果转换。<br>19：从左上角到右下角的锯齿边覆盖效果转换。<br>20：从左下角到右上角的锯齿边覆盖效果转换。<br>21：随机横线条转换。<br>22：随机竖线条转换。<br>23：随机使用上面可能的值转换。</p>
+<h3 id="base标签"><a href="#base标签" class="headerlink" title="base标签"></a>base标签</h3><p>为页面上所有链接指定默认打开方式<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;base <span class="keyword">target</span>=<span class="string">"_self"</span>&gt;     <span class="comment">//指定页面中所有标签都是本页打开！</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="相关文献"><a href="#相关文献" class="headerlink" title="相关文献"></a>相关文献</h3><ul>
+<li><a href="http://www.cnblogs.com/pigtail/archive/2013/03/15/2961631.html" target="_blank" rel="noopener">viewport详解释</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/reward/wechat-pay.png" alt="ski WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js-update-countdown/" rel="next" title="js倒计时在应用后台不执行">
+                <i class="fa fa-chevron-left"></i> js倒计时在应用后台不执行
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/css-triangle/" rel="prev" title="css小三角形">
+                css小三角形 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/portrait_1.jpg" alt="ski">
+          <p class="site-author-name" itemprop="name">ski</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="http://www.xonepage.com/" target="_blank" title="Intro">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Intro
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://git.oschina.net/xkh" target="_blank" title="GitOs">
+                  
+                    <i class="fa fa-fw fa-github-alt"></i>
+                  
+                  GitOs
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.edlad.com/" title="edLad" target="_blank">edLad</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xonepage.com/" title="me" target="_blank">me</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta标签"><span class="nav-number">2.</span> <span class="nav-text">meta标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#name属性"><span class="nav-number">2.1.</span> <span class="nav-text">name属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Keywords-关键字"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.Keywords(关键字)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-description-网站内容描述"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.description(网站内容描述)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-viewport-窗口配置"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.viewport(窗口配置)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-robots-机器人向导"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.robots(机器人向导)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-author-作者"><span class="nav-number">2.1.5.</span> <span class="nav-text">5.author(作者)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-generator"><span class="nav-number">2.1.6.</span> <span class="nav-text">6.generator</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-copyright"><span class="nav-number">2.1.7.</span> <span class="nav-text">7.copyright</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-revisit-after"><span class="nav-number">2.1.8.</span> <span class="nav-text">8.revisit-after</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#http-equiv属性"><span class="nav-number">2.2.</span> <span class="nav-text">http-equiv属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-Expires-期限"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.Expires(期限)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-Pragma-cache模式"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.Pragma(cache模式)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-Cache-Control指定请求和响应遵循的缓存机制。"><span class="nav-number">2.2.3.</span> <span class="nav-text">3.Cache-Control指定请求和响应遵循的缓存机制。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-Refresh-刷新"><span class="nav-number">2.2.4.</span> <span class="nav-text">4.Refresh(刷新)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Set-Cookie-cookie设定"><span class="nav-number">2.2.5.</span> <span class="nav-text">5.Set-Cookie(cookie设定)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-Window-target-显示窗口的设定"><span class="nav-number">2.2.6.</span> <span class="nav-text">6.Window-target(显示窗口的设定)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-content-Type-显示字符集的设定"><span class="nav-number">2.2.7.</span> <span class="nav-text">7.content-Type(显示字符集的设定)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-content-Language（显示语言的设定）"><span class="nav-number">2.2.8.</span> <span class="nav-text">8.content-Language（显示语言的设定）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-imagetoolbar"><span class="nav-number">2.2.9.</span> <span class="nav-text">9.imagetoolbar</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#10-Content-Script-Type"><span class="nav-number">2.2.10.</span> <span class="nav-text">10.Content-Script-Type</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-页面过度效果-ie有效"><span class="nav-number">2.2.11.</span> <span class="nav-text">11.页面过度效果(ie有效)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base标签"><span class="nav-number">3.</span> <span class="nav-text">base标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关文献"><span class="nav-number">4.</span> <span class="nav-text">相关文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ski</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" rel="external nofollow" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aWzs2xJ7wJMGwPKkNEI6VGLA-gzGzoHsz", "Sv0OFa34rCmPrkkFINnAGYWi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

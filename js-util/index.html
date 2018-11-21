@@ -1,0 +1,1093 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="baidu-site-verification" content="lxfu2sEmyy">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="邢凯航的博客 邢凯航 Web前端博客 H5前端 ski的博客 xingkaihang xkh ski">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="主要是一些常用工具类封装整理，这样开发起来就高效些...持续更新中...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript&#x2F;jq工具类扩展">
+<meta property="og:url" content="http://blog.xonepage.com/js-util/index.html">
+<meta property="og:site_name" content="假面&#39;">
+<meta property="og:description" content="主要是一些常用工具类封装整理，这样开发起来就高效些...持续更新中...">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-29T09:25:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript&#x2F;jq工具类扩展">
+<meta name="twitter:description" content="主要是一些常用工具类封装整理，这样开发起来就高效些...持续更新中...">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xonepage.com/js-util/">
+
+
+
+
+
+  <title>javascript/jq工具类扩展 | 假面'</title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s13.cnzz.com/z_stat.php?id=1261962361&web_id=1261962361" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">假面'</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.xonepage.com/js-util/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ski">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/portrait_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="假面'">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                javascript/jq工具类扩展
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-20T00:00:00+08:00">
+                2017-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/about/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/js-util/" class="leancloud_visitors" data-flag-title="javascript/jq工具类扩展">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  主要是一些常用工具类封装整理，这样开发起来就高效些...持续更新中...
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="【javascript原生工具扩展】"><a href="#【javascript原生工具扩展】" class="headerlink" title="【javascript原生工具扩展】"></a>【javascript原生工具扩展】</h3><h4 id="Date工具类"><a href="#Date工具类" class="headerlink" title="Date工具类"></a>Date工具类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * javascript原生工具扩展</span></span><br><span class="line"><span class="comment"> * ski</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Date</span>.prototype.format = <span class="function"><span class="keyword">function</span>(<span class="params">format</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> o = &#123;</span><br><span class="line">        <span class="string">"M+"</span>: <span class="keyword">this</span>.getMonth() + <span class="number">1</span>, <span class="comment">//month</span></span><br><span class="line">        <span class="string">"d+"</span>: <span class="keyword">this</span>.getDate(), <span class="comment">//day</span></span><br><span class="line">        <span class="string">"h+"</span>: <span class="keyword">this</span>.getHours(), <span class="comment">//hour</span></span><br><span class="line">        <span class="string">"m+"</span>: <span class="keyword">this</span>.getMinutes(), <span class="comment">//minute</span></span><br><span class="line">        <span class="string">"s+"</span>: <span class="keyword">this</span>.getSeconds(), <span class="comment">//second</span></span><br><span class="line">        <span class="string">"q+"</span>: <span class="built_in">Math</span>.floor((<span class="keyword">this</span>.getMonth() + <span class="number">3</span>) / <span class="number">3</span>), <span class="comment">//quarter</span></span><br><span class="line">        <span class="string">"S"</span>: <span class="keyword">this</span>.getMilliseconds() <span class="comment">//millisecond</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/(y+)/</span>.test(format)) &#123;</span><br><span class="line">        format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, (<span class="keyword">this</span>.getFullYear() + <span class="string">""</span>).substr(<span class="number">4</span> - <span class="built_in">RegExp</span>.$<span class="number">1.</span>length));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> o) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"("</span> + k + <span class="string">")"</span>).test(format)) &#123;</span><br><span class="line">            format = format.replace(<span class="built_in">RegExp</span>.$<span class="number">1</span>, <span class="built_in">RegExp</span>.$<span class="number">1.</span>length == <span class="number">1</span> ? o[k] : (<span class="string">"00"</span> + o[k]).substr((<span class="string">""</span> + o[k]).length));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> format;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * eg: new Date().toLocaleString();</span></span><br><span class="line"><span class="comment"> * @return 2011-01-01 12:00:00</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Date</span>.prototype.toLocaleString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.toString()==<span class="string">"Invalid Date"</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.format(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="String工具类"><a href="#String工具类" class="headerlink" title="String工具类"></a>String工具类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description trim去掉字符串两边的指定字符,默去空格</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params">tag</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!tag) &#123; </span><br><span class="line">        tag = <span class="string">'\\s'</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123; </span><br><span class="line">        <span class="keyword">if</span> (tag == <span class="string">'\\'</span>) &#123; </span><br><span class="line">        tag = <span class="string">'\\\\'</span>; </span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (tag == <span class="string">','</span> || tag == <span class="string">'|'</span> || tag == <span class="string">';'</span>) &#123; </span><br><span class="line">            tag = <span class="string">'\\'</span> + tag; </span><br><span class="line">        &#125;<span class="keyword">else</span> &#123; </span><br><span class="line">            tag = <span class="string">'\\s'</span>; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">eval</span>(<span class="string">'var reg=/(^'</span> + tag + <span class="string">'+)|('</span> + tag + <span class="string">'+$)/g;'</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(reg, <span class="string">''</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description 字符串截取后面加入...</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.interceptString = <span class="function"><span class="keyword">function</span>(<span class="params">len</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.length &gt; len) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="number">0</span>, len) + <span class="string">"..."</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description 将一个字符串用给定的字符变成数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.toArray = <span class="function"><span class="keyword">function</span>(<span class="params">tag</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.indexOf(tag) != <span class="number">-1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.split(tag);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> != <span class="string">''</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> [<span class="keyword">this</span>.toString()];</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> [];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description 只留下数字(0123456789)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.toNumber= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/\D/g</span>, <span class="string">""</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description 保留中文</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.toCN= <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> regEx = <span class="regexp">/[^\u4e00-\u9fa5\uf900-\ufa2d]/g</span>;  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(regEx, <span class="string">''</span>);  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description 是否是以XX开头</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.startsWith= <span class="function"><span class="keyword">function</span>(<span class="params">tag</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="number">0</span>, tag.length) == tag;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description 是否已XX结尾</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">String</span>.prototype.endWith= <span class="function"><span class="keyword">function</span>(<span class="params">tag</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.substring(<span class="keyword">this</span>.length - tag.length) == tag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Array工具类"><a href="#Array工具类" class="headerlink" title="Array工具类"></a>Array工具类</h4><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 根据数据取得再数组中的索引</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Array.prototype.getIndex = function(obj)&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">this</span>[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 移除数组中的某元素</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Array.prototype.remove= function (obj) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">this</span>[i]) &#123;</span><br><span class="line">            <span class="keyword">this</span>.splice(i, <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span> 判断元素是否在数组中</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Array.prototype.contains= function (obj) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">this</span>[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="浏览器操作"><a href="#浏览器操作" class="headerlink" title="浏览器操作"></a>浏览器操作</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//进入全屏模式,  判断各种浏览器，找到正确的方法</span></span><br><span class="line"><span class="keyword">var</span> launchFullScreen = <span class="function"><span class="keyword">function</span> (<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(element.requestFullscreen) &#123;</span><br><span class="line">        element.requestFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(element.mozRequestFullScreen) &#123;</span><br><span class="line">        element.mozRequestFullScreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(element.webkitRequestFullscreen) &#123;</span><br><span class="line">        element.webkitRequestFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(element.msRequestFullscreen) &#123;</span><br><span class="line">        element.msRequestFullscreen();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//退出全屏模式</span></span><br><span class="line"><span class="keyword">var</span> exitFullScreen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">document</span>.exitFullscreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.exitFullscreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">document</span>.mozCancelFullScreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.mozCancelFullScreen();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">document</span>.webkitExitFullscreen) &#123;</span><br><span class="line">        <span class="built_in">document</span>.webkitExitFullscreen();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="【jQuery工具扩展】"><a href="#【jQuery工具扩展】" class="headerlink" title="【jQuery工具扩展】"></a>【jQuery工具扩展】</h3><h4 id="jquery公共方法"><a href="#jquery公共方法" class="headerlink" title="jquery公共方法"></a>jquery公共方法</h4><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">function</span>($) &#123;</span><br><span class="line">    //公用方法</span><br><span class="line">    $.extend($, &#123;</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * @description 判断变量是否存在,或者是否以某种类型存在</span><br><span class="line">         * @param &#123;object&#125; o  判断变量是否存在</span><br><span class="line">         * @param &#123;object&#125; type 数据类型  Number,Boolean等</span><br><span class="line">         * @return &#123;Boolean&#125; nResult 返回结果 <span class="literal">true</span>或者<span class="literal">false</span></span><br><span class="line">         */</span><br><span class="line">        isExists: function(<span class="name">o</span>, type) &#123;</span><br><span class="line">            return o != undefined &amp;&amp; o !== null &amp;&amp; (<span class="name"><span class="builtin-name">type</span></span> ? o.constructor == type : <span class="literal">true</span>)<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * @description 把任意类型转成Boolean</span><br><span class="line">         * @param &#123;object&#125; o  任意对象</span><br><span class="line">         * @return &#123;Boolean&#125; nResult 返回结果 <span class="literal">true</span>或者<span class="literal">false</span></span><br><span class="line">         */</span><br><span class="line">        parseBoolean: function(<span class="name">o</span>) &#123;</span><br><span class="line">            var flag = !! o;</span><br><span class="line">            return (<span class="name">flag</span> &amp;&amp; typeof(<span class="name">o</span>) == <span class="string">"string"</span> &amp;&amp; (<span class="name">o</span></span><br><span class="line">                .toLowerCase() == <span class="string">"false"</span> || o.toLowerCase() == <span class="string">"null"</span> || o.toLowerCase() == <span class="string">"undefined"</span> || o == <span class="string">"0"</span>)) ? <span class="literal">false</span> : flag;</span><br><span class="line">        &#125;,</span><br><span class="line">        parseDateTime: function (<span class="name"><span class="builtin-name">str</span></span>) &#123;</span><br><span class="line">            if (<span class="name"><span class="builtin-name">str</span></span>) &#123;</span><br><span class="line">                return new Date(<span class="name">str.replace</span>(/-/g, '/'))<span class="comment">;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * @description 把字符串自动转换成它原来的类型</span><br><span class="line">         * @param val o  任意对象</span><br><span class="line">         * @return val any</span><br><span class="line">         */</span><br><span class="line">        parseAny: function(<span class="name"><span class="builtin-name">val</span></span>) &#123;</span><br><span class="line">            if (<span class="name">typeof</span> val == 'string') &#123;</span><br><span class="line">                if (<span class="name"><span class="builtin-name">val</span></span> != <span class="string">""</span> &amp;&amp; !isNaN(<span class="name"><span class="builtin-name">val</span></span>)) &#123;</span><br><span class="line">                    val = val - <span class="number">0</span><span class="comment">;</span></span><br><span class="line">                &#125; else if (<span class="name">val.toLowerCase</span>() == <span class="string">"true"</span>) &#123;</span><br><span class="line">                    val = <span class="literal">true</span><span class="comment">;</span></span><br><span class="line">                &#125; else if (<span class="name">val.toLowerCase</span>() == <span class="string">"false"</span>) &#123;</span><br><span class="line">                    val = <span class="literal">false</span><span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return val;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * @description 将?key1=value1&amp;key2=value2&amp;...转换成一个对象&#123;key1:value1,key2:value2....&#125;</span><br><span class="line">         * @param &#123;String&#125; string  String字符串</span><br><span class="line">         * @return &#123;Object&#125; obj 返回结果 &#123;key1:value1,key2:value2....&#125;</span><br><span class="line">         */</span><br><span class="line">        parseParam: function(<span class="name"><span class="builtin-name">str</span></span>) &#123;</span><br><span class="line">            var obj = &#123;&#125;<span class="comment">;</span></span><br><span class="line">            if (<span class="name"><span class="builtin-name">str</span></span> == undefined || str == null) &#123;</span><br><span class="line">                return obj;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (<span class="name">typeof</span> str == 'object') &#123;</span><br><span class="line">                return str;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (<span class="name">typeof</span> str == 'string') &#123;</span><br><span class="line">                str = decodeURIComponent(<span class="name"><span class="builtin-name">str</span></span>)<span class="comment">;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //踢出前缀#或者？</span><br><span class="line">            str = str.replace(/^[\?\#]/, <span class="string">""</span>)<span class="comment">;</span></span><br><span class="line">            //分割参数</span><br><span class="line">            var params = str.split(<span class="string">"&amp;"</span>)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">            for (<span class="name"><span class="builtin-name">var</span></span> i = <span class="number">0</span><span class="comment">; i &lt; params.length; i++) &#123;</span></span><br><span class="line">                var item = params[i].split(<span class="string">"="</span>)<span class="comment">;</span></span><br><span class="line">                var key = item[<span class="number">0</span>]<span class="comment">;</span></span><br><span class="line">                var val = item[<span class="number">1</span>]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">                if (<span class="name">!key</span>) &#123;</span><br><span class="line">                    continue;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                //类型转换</span><br><span class="line">                if (<span class="name"><span class="builtin-name">val</span></span> == undefined) &#123;</span><br><span class="line">                    val = <span class="literal">true</span><span class="comment">;</span></span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    val = this.parseAny(<span class="name"><span class="builtin-name">val</span></span>)<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">                obj[key] = val;</span><br><span class="line">            &#125;</span><br><span class="line">            return obj;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * 获取url参数</span><br><span class="line">         */</span><br><span class="line">        getQueryString: function(<span class="name"><span class="builtin-name">name</span></span>) &#123;</span><br><span class="line">            var reg = new RegExp(<span class="string">"(^|&amp;|)"</span>+ name +<span class="string">"=([^&amp;]*)(&amp;|$)"</span>)<span class="comment">;</span></span><br><span class="line">            var r = window.location.hash.substr(<span class="number">1</span>).match(<span class="name">reg</span>)<span class="comment">;</span></span><br><span class="line">            if(<span class="name">r</span> != null) return  unescape(<span class="name">r</span>[<span class="number">2</span>])<span class="comment">; return null;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * @description 占位符格式化</span><br><span class="line">         * @param &#123;String&#125; str 需要替换的模板</span><br><span class="line">         * @param &#123;Object&#125; params 参数</span><br><span class="line">         * @param &#123;Boolean&#125; isEncode 是否编码</span><br><span class="line">         * @eg demo(<span class="string">"http://www.baidu.com?name=&#123;name&#125;&amp;age=&#123;age&#125;&amp;chanelid=&#123;chanelid&#125;"</span>,&#123;name:<span class="string">"demo"</span>,age:23,chanelid:100&#125;,<span class="literal">false</span>)</span><br><span class="line">         * @return &#123;String&#125; str 返回结果 http://www.baidu.com?name=demo&amp;age=23&amp;chanelid=100</span><br><span class="line">         */</span><br><span class="line">        format: function(<span class="name"><span class="builtin-name">str</span></span>, params, isEncode) &#123;</span><br><span class="line">            if (<span class="name">typeof</span> params == <span class="string">"object"</span>) &#123;</span><br><span class="line">                for (<span class="name"><span class="builtin-name">var</span></span> key in params) &#123;</span><br><span class="line">                    if (<span class="name">!</span>$.isExists(<span class="name">params</span>[key]) || params[key] == <span class="string">"undefined"</span> || params[key] == <span class="string">"null"</span>) &#123;</span><br><span class="line">                        params[key] = <span class="string">""</span><span class="comment">;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                    str = str.replace(<span class="name"><span class="builtin-name">new</span></span> RegExp(<span class="string">"\\&#123;"</span> + key + <span class="string">"\\&#125;"</span>, <span class="string">"ig"</span>), isEncode ? encodeURIComponent(<span class="name">params</span>[key]) : params[key])<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return str.replace(/\&#123;\w*\&#125;/ig, <span class="string">""</span>)<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * 去掉字符串起始的制定字符</span><br><span class="line">         * @method trimStart</span><br><span class="line">         * @param &lt;String&gt; text 指定字符串</span><br><span class="line">         * @param &lt;String&gt; trimStr 替换字符串</span><br><span class="line">         */</span><br><span class="line">        trimStart: function(<span class="name">text</span>, trimStr) &#123;</span><br><span class="line">            return (<span class="name">text</span> || <span class="string">""</span>).replace(<span class="name"><span class="builtin-name">new</span></span> RegExp(<span class="string">"^"</span> + trimStr + <span class="string">"*"</span>, <span class="string">"g"</span>), <span class="string">""</span>)<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        /**</span><br><span class="line">         * 去掉字符串结尾的制定字符</span><br><span class="line">         * @method trimEnd</span><br><span class="line">         * @param &lt;String&gt; text 指定字符串</span><br><span class="line">         * @param &lt;String&gt; trimStr 替换字符串</span><br><span class="line">         */</span><br><span class="line">        trimEnd: function(<span class="name">text</span>, trimStr) &#123;</span><br><span class="line">            return (<span class="name">text</span> || <span class="string">""</span>).replace(<span class="name"><span class="builtin-name">new</span></span> RegExp(<span class="name">trimStr</span> + <span class="string">"*$"</span>, <span class="string">"g"</span>), <span class="string">""</span>)<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        startWith: function(<span class="name">s</span>, d) &#123;</span><br><span class="line">            return new RegExp(<span class="string">"^"</span> + d).test(<span class="name">s</span>)<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * 获取标准表单数据，转换为JSON数据格式</span><br><span class="line">         * @method getForm</span><br><span class="line">         * @example $.getForm(<span class="string">"#form"</span>)<span class="comment">;</span></span><br><span class="line">         * isParse是否转化类型</span><br><span class="line">         * @return &lt;Object&gt; data</span><br><span class="line">         */</span><br><span class="line">        getForm: function ($form, isParse) &#123;</span><br><span class="line">            var data = &#123;&#125;<span class="comment">;</span></span><br><span class="line">            $form = $($form)<span class="comment">;</span></span><br><span class="line">            if ($form.length == <span class="number">0</span>) &#123;</span><br><span class="line">                return data;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            $(<span class="string">"input"</span>, $form).each(<span class="name">function</span> () &#123;</span><br><span class="line">                var item = $(<span class="name">this</span>)<span class="comment">;</span></span><br><span class="line">                var name = item.attr(<span class="string">"name"</span>)<span class="comment">;</span></span><br><span class="line">                if (<span class="name">!name</span> || $.isExists(<span class="name">data</span>[name])) &#123;</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line">                switch (<span class="name">item.attr</span>(<span class="string">"type"</span>)) &#123;</span><br><span class="line">                    case <span class="string">"radio"</span>:</span><br><span class="line">                        // DOTO: 当 input[type=<span class="string">"radio"</span>][disabled=<span class="string">"disabled"</span>] 为禁用</span><br><span class="line">                        if (<span class="name">!this.disabled</span> &amp;&amp; this.checked) &#123;</span><br><span class="line">                            data[name] = item.val()<span class="comment">;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                        break;</span><br><span class="line">                    case <span class="string">"checkbox"</span>:</span><br><span class="line">                        // DOTO: 当 input[type=<span class="string">"checkbox"</span>][disabled=<span class="string">"disabled"</span>] 为禁用</span><br><span class="line">                        if (<span class="name">this.disabled</span>) &#123;</span><br><span class="line">                            break;</span><br><span class="line">                        &#125;</span><br><span class="line"></span><br><span class="line">                        data[name] = <span class="string">""</span><span class="comment">;</span></span><br><span class="line">                        $(<span class="string">"input[type='checkbox'][name='"</span> + name + <span class="string">"']:checked"</span>, $form).each(<span class="name">function</span> () &#123;</span><br><span class="line">                            data[name] += this.value + <span class="string">","</span><span class="comment">;</span></span><br><span class="line">                        &#125;)</span><br><span class="line">                        data[name] = $.trimEnd(<span class="name">data</span>[name], ',')<span class="comment">;</span></span><br><span class="line">                        break;</span><br><span class="line">                    case <span class="string">"button"</span>:</span><br><span class="line">                    case <span class="string">"reset"</span>:</span><br><span class="line">                    case <span class="string">"submit"</span>:</span><br><span class="line">                        break;</span><br><span class="line">                    default:</span><br><span class="line">                        // DOTO: 当 input[type=<span class="string">"text"</span>][disabled=<span class="string">"disabled"</span>] 为禁用</span><br><span class="line">                        if (<span class="name">!this.disabled</span>) &#123;</span><br><span class="line">                            data[name] = $.trim(<span class="name">item.val</span>())<span class="comment">;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                        break;</span><br><span class="line">                &#125;</span><br><span class="line">                data[name] = isParse ? $.parseAny(<span class="name">data</span>[name]) : data[name]<span class="comment">;</span></span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            $(<span class="string">"textarea"</span>, $form).each(<span class="name">function</span> () &#123;</span><br><span class="line">                if (<span class="name">!this.name</span>) &#123;</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line">                data[this.name] = $.parseAny(<span class="name">this.value</span>)<span class="comment">;</span></span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            $(<span class="string">"select"</span>, $form).each(<span class="name">function</span> () &#123;</span><br><span class="line">                if (<span class="name">!this.name</span>) &#123;</span><br><span class="line">                    return;</span><br><span class="line">                &#125;</span><br><span class="line">                data[this.name] = isParse ? $.parseAny(<span class="name">this.value</span>) : this.value;</span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            return data;</span><br><span class="line">        &#125;,</span><br><span class="line">        setForm: function ($form, data) &#123;</span><br><span class="line">            $form = $($form)<span class="comment">;</span></span><br><span class="line">            if ($form.length == <span class="number">0</span> || !$.isPlainObject(<span class="name">data</span>)) &#123;</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            var nodes = $form.get(<span class="number">0</span>).elements;</span><br><span class="line">            var i = <span class="number">0</span>,</span><br><span class="line">                iLen = nodes.length;</span><br><span class="line">            var j, jLen, item, name, type, select, value, existsVal;</span><br><span class="line"></span><br><span class="line">            for (<span class="comment">; i &lt; iLen; i++) &#123;</span></span><br><span class="line">                item = nodes[i]<span class="comment">;</span></span><br><span class="line">                name = item.name;</span><br><span class="line">                type = item.type;</span><br><span class="line">                value = data[name]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">                if (<span class="name">!name</span> || item.disabled || !$.isExists(<span class="name">value</span>) || <span class="string">"file"</span> == type) &#123;</span><br><span class="line">                    continue;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                if (<span class="string">"radio"</span> == type) &#123;</span><br><span class="line">                    item.checked = item.value == (<span class="name">value</span> + <span class="string">""</span>)<span class="comment">;</span></span><br><span class="line">                &#125; else if (<span class="string">"checkbox"</span> == type || <span class="string">"select-multiple"</span> == type) &#123;</span><br><span class="line">                    if ($.isArray(<span class="name">value</span>)) &#123;</span><br><span class="line">                        //把值转化成字符串</span><br><span class="line">                        for (<span class="name"><span class="builtin-name">var</span></span> n = <span class="number">0</span><span class="comment">; n &lt; value.length; n++) &#123;</span></span><br><span class="line">                            value[n] += <span class="string">""</span><span class="comment">;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        value = (<span class="name">value</span> + <span class="string">""</span>).split(<span class="name">'</span>,')<span class="comment">;</span></span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    if (<span class="string">"checkbox"</span> == type) &#123;</span><br><span class="line">                        item.checked = $.inArray(<span class="name">item.value</span>, value) != <span class="number">-1</span><span class="comment">;</span></span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        select = item.options;</span><br><span class="line">                        for (<span class="name">j</span> = <span class="number">0</span>, jLen = select.length; j &lt; jLen; j++) &#123;</span><br><span class="line">                            item = select[j]<span class="comment">;</span></span><br><span class="line">                            item.selected = $.inArray(<span class="name">item.value</span>, value) != <span class="number">-1</span><span class="comment">;</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    if (<span class="name">undefined</span> != value) &#123;</span><br><span class="line">                        item.value = value;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * 重置表单</span><br><span class="line">         * @method resetForm</span><br><span class="line">         * @example $.resetForm(<span class="string">"#myFormId"</span>)<span class="comment">;</span></span><br><span class="line">         * @param formId #+表单Id</span><br><span class="line">         */</span><br><span class="line">        resetForm: function ($form) &#123;</span><br><span class="line">            $($form).get(<span class="number">0</span>).reset()<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * 加载并解析模板</span><br><span class="line">         * @usage $.template(<span class="name">'tpl-paotui-orderDetails'</span>, data) loads and compile '/static/manage/modules/paotui/batchDelivers.tpl'</span><br><span class="line">         */</span><br><span class="line">        template: function (<span class="name">id</span>, data) &#123;</span><br><span class="line">            /**</span><br><span class="line">             * @param id &#123;String&#125; starts with 'tpl'</span><br><span class="line">             * @param data &#123;Object&#125;</span><br><span class="line">             */</span><br><span class="line">            var _templates = Namespace(<span class="name">'DDXQ._templates'</span>)<span class="comment">;</span></span><br><span class="line">            var render, tpl_base;</span><br><span class="line">            tpl_base = site_root + '/static/manage/modules/';</span><br><span class="line">            if (<span class="name">!id</span>) &#123;</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (<span class="name">!</span>$.isPlainObject(<span class="name">data</span>)) &#123;</span><br><span class="line">                data = &#123;&#125;<span class="comment">;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (<span class="name">id.indexOf</span>(<span class="name">'tpl'</span>) != <span class="number">0</span>) &#123;</span><br><span class="line">                return template(<span class="name">id</span>, data)<span class="comment">;</span></span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                id = id.substr(<span class="number">4</span>)<span class="comment">;</span></span><br><span class="line">                if (<span class="name">id</span> in _templates) &#123;</span><br><span class="line">                    return _templates[id](<span class="name">data</span>)<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: tpl_base + id.replace(/-/g, <span class="string">"/"</span>) + <span class="string">".tpl"</span>,</span><br><span class="line">                cache: <span class="literal">false</span>,</span><br><span class="line">                async: <span class="literal">false</span>,</span><br><span class="line">                dataType: 'html',</span><br><span class="line">                success: function (<span class="name">html</span>) &#123;</span><br><span class="line">                    render = template.compile(<span class="name">html</span>)<span class="comment">;</span></span><br><span class="line">                    _templates[id] = render;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">            if (<span class="name">render</span>) &#123;</span><br><span class="line">                return render(<span class="name">data</span>)<span class="comment">;</span></span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                console.log(<span class="name">id</span> + '模板加载出错')<span class="comment">;</span></span><br><span class="line">                return <span class="string">""</span><span class="comment">;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * 加载外部模版并解析</span><br><span class="line">         * @usage $.artTemplate(<span class="name">'test'</span>, data) loads and compile '/test.tpl'</span><br><span class="line">         */</span><br><span class="line">        artTemplate: function(<span class="name"><span class="builtin-name">name</span></span>, data)&#123;</span><br><span class="line">            var render = null;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: name + <span class="string">".tpl"</span>,</span><br><span class="line">                cache: <span class="literal">false</span>,</span><br><span class="line">                async: <span class="literal">false</span>,</span><br><span class="line">                dataType: 'html',</span><br><span class="line">                success: function (<span class="name">tpl</span>) &#123;</span><br><span class="line">                    render = template.compile(<span class="name">tpl</span>)<span class="comment">;</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            return render ? render(<span class="name">data</span>) : '模版加载失败';</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        sendLog: function (<span class="name"><span class="builtin-name">key</span></span>, msg) &#123;</span><br><span class="line">            /**</span><br><span class="line">             * @param key &#123;String&#125; 日志key值，相当于路由</span><br><span class="line">             * @param msg &#123;Object&#125; 一维键值对，用于传递需要打日志的数据</span><br><span class="line">             * @usage $.sendLog(<span class="name">'task/schedule/batchdispatch'</span>, &#123;row_index: <span class="number">2</span>&#125;)</span><br><span class="line">             */</span><br><span class="line">            var data = $.extend(<span class="name">msg</span>, &#123;key: key&#125;)<span class="comment">;</span></span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: site_root + '/api/sendLog',</span><br><span class="line">                method: 'post',</span><br><span class="line">                data: data</span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        findByKey: function (<span class="name"><span class="builtin-name">key</span></span>, value, collection) &#123;</span><br><span class="line">            /**</span><br><span class="line">             * @param key &#123;String&#125; property key</span><br><span class="line">             * @param value &#123;Any&#125; property value</span><br><span class="line">             * @param collection &#123;Array&#125; data collection to be searching in</span><br><span class="line">             */</span><br><span class="line">            for (<span class="name"><span class="builtin-name">var</span></span> i = <span class="number">0</span>, item; item = collection[i]<span class="comment">; i++) &#123;</span></span><br><span class="line">                if (<span class="name">item</span>[key] == value) &#123;</span><br><span class="line">                    return item;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;,</span><br><span class="line">        getProp: function (<span class="name"><span class="builtin-name">key</span></span>, global) &#123;</span><br><span class="line">            /**</span><br><span class="line">             * @param key &#123;String&#125; format: `a.b.c ...`</span><br><span class="line">             * @param global &#123;Object&#125;</span><br><span class="line">             */</span><br><span class="line">            global = global || window;</span><br><span class="line">            var segments = key.split(<span class="name">'.'</span>)<span class="comment">;</span></span><br><span class="line">            var segRefs = []<span class="comment">;</span></span><br><span class="line">            var length = segments.length;</span><br><span class="line">            segRefs[<span class="number">0</span>] = global[segments[<span class="number">0</span>]]<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">            if (<span class="name">length</span> == <span class="number">1</span>) &#123;</span><br><span class="line">                return segRefs[<span class="number">0</span>]<span class="comment">;</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            for (<span class="name"><span class="builtin-name">var</span></span> i = <span class="number">1</span><span class="comment">; i &lt; segments.length; i++) &#123;</span></span><br><span class="line">                segRefs[i] = segRefs[i - <span class="number">1</span>][segments[i]]<span class="comment">;</span></span><br><span class="line">                if (<span class="name">!segRefs</span>[i]) &#123;</span><br><span class="line">                    return undefined;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return segRefs[segments.length - <span class="number">1</span>]<span class="comment">;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        uuid: function () &#123;</span><br><span class="line">            var d = new Date().getTime()<span class="comment">;</span></span><br><span class="line">            if (<span class="name">window.performance</span> &amp;&amp; typeof window.performance.now === <span class="string">"function"</span>) &#123;</span><br><span class="line">                d += performance.now()<span class="comment">; //use high-precision timer if available</span></span><br><span class="line">            &#125;</span><br><span class="line">            var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (<span class="name">c</span>) &#123;</span><br><span class="line">                var r = (<span class="name">d</span> + Math.random() * <span class="number">16</span>) % <span class="number">16</span> | <span class="number">0</span><span class="comment">;</span></span><br><span class="line">                d = Math.floor(<span class="name">d</span> / <span class="number">16</span>)<span class="comment">;</span></span><br><span class="line">                return (<span class="name">c</span> == 'x' ? r : (<span class="name">r</span> &amp; <span class="number">0</span>x3 | <span class="number">0</span>x8)).toString(<span class="number">16</span>)<span class="comment">;</span></span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            return uuid;</span><br><span class="line">        &#125;,</span><br><span class="line">        makeComboboxData: function (<span class="name">textField</span>, valueField, collection, hasAll) &#123;</span><br><span class="line">            var _data = []<span class="comment">;</span></span><br><span class="line">            hasAll &amp;&amp; _data.push(&#123;text: '全部', value: ''&#125;)<span class="comment">;</span></span><br><span class="line">            $.each(<span class="name">collection</span>, function (<span class="name">index</span>, item) &#123;</span><br><span class="line">                _data.push(&#123;</span><br><span class="line">                    text: item[textField],</span><br><span class="line">                    value: item[valueField]</span><br><span class="line">                &#125;)<span class="comment">;</span></span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            return _data;</span><br><span class="line">        &#125;,</span><br><span class="line">        makeComboboxFromMap: function (<span class="name"><span class="builtin-name">map</span></span>, hasAll) &#123;</span><br><span class="line">            var _data = []<span class="comment">;</span></span><br><span class="line">            hasAll &amp;&amp; _data.push(&#123;text: '全部', value: ''&#125;)<span class="comment">;</span></span><br><span class="line">            $.each(<span class="name"><span class="builtin-name">map</span></span>, function (<span class="name"><span class="builtin-name">key</span></span>, val) &#123;</span><br><span class="line">                _data.push(&#123;</span><br><span class="line">                    text: val,</span><br><span class="line">                    value: key</span><br><span class="line">                &#125;)<span class="comment">;</span></span><br><span class="line">            &#125;)<span class="comment">;</span></span><br><span class="line">            return _data;</span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line">        /**</span><br><span class="line">         * @param img</span><br><span class="line">         * @param &#123;Array&#125; [size = [<span class="number">80</span>, <span class="number">80</span>]]</span><br><span class="line">         * @param &#123;Number&#125; [mode = <span class="number">1</span>]</span><br><span class="line">         */</span><br><span class="line">        qiniuImgCrop: function (<span class="name">img</span>, size, mode) &#123;</span><br><span class="line">            // @see http://developer.qiniu.com/code/v6/api/kodo-api/image/imageview2.html</span><br><span class="line">            if (<span class="name">typeof</span> img !== 'string') &#123;</span><br><span class="line">                throw new TypeError(<span class="name">'Invalid</span> Param Type for `img`, URLString Expected.')</span><br><span class="line">            &#125;</span><br><span class="line">            var defaults = &#123;</span><br><span class="line">                size: [<span class="number">80</span>, <span class="number">80</span>],</span><br><span class="line">                mode: <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            size = size || defaults.size;</span><br><span class="line">            mode = mode || defaults.mode;</span><br><span class="line"></span><br><span class="line">            var ext = 'imageView2/' + mode + '/w/' + size[<span class="number">0</span>] + '/h/' + size[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">            // `?` exist in img url</span><br><span class="line">            if (<span class="name">img.indexOf</span>(<span class="name">'?'</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">                return img.split(<span class="name">'!'</span>)[<span class="number">0</span>].split(<span class="name">'?'</span>)[<span class="number">0</span>] + '?' + ext</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            return img + '?' + ext</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)<span class="comment">;</span></span><br><span class="line">&#125;($))<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h4 id="jquery-cookie"><a href="#jquery-cookie" class="headerlink" title="jquery cookie"></a>jquery cookie</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</span><br><span class="line">	$.extend(&#123;	</span><br><span class="line">		cookie : <span class="function"><span class="keyword">function</span> (<span class="params">key, value, options</span>) </span>&#123;</span><br><span class="line">		    <span class="comment">// key and value given, set cookie...</span></span><br><span class="line">		    <span class="keyword">if</span> (<span class="built_in">arguments</span>.length &gt; <span class="number">1</span> &amp;&amp; (value === <span class="literal">null</span> || <span class="keyword">typeof</span> value !== <span class="string">"object"</span>)) &#123;</span><br><span class="line">		        options = jQuery.extend(&#123;&#125;, options);</span><br><span class="line">		        <span class="keyword">if</span> (value === <span class="literal">null</span>) &#123;</span><br><span class="line">		            options.expires = <span class="number">-1</span>;</span><br><span class="line">		        &#125;</span><br><span class="line">		        <span class="keyword">if</span> (<span class="keyword">typeof</span> options.expires === <span class="string">'number'</span>) &#123;</span><br><span class="line">		            <span class="keyword">var</span> days = options.expires, t = options.expires = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">		            t.setDate(t.getDate() + days);</span><br><span class="line">		        &#125;</span><br><span class="line">		        <span class="keyword">return</span> (<span class="built_in">document</span>.cookie = [</span><br><span class="line">		            <span class="built_in">encodeURIComponent</span>(key), <span class="string">'='</span>,</span><br><span class="line">		            options.raw ? <span class="built_in">String</span>(value) : <span class="built_in">encodeURIComponent</span>(<span class="built_in">String</span>(value)),</span><br><span class="line">		            options.expires ? <span class="string">'; expires='</span> + options.expires.toUTCString() : <span class="string">''</span>, <span class="comment">// use expires attribute, max-age is not supported by IE</span></span><br><span class="line">		            options.path ? <span class="string">'; path='</span> + options.path : <span class="string">''</span>,</span><br><span class="line">		            options.domain ? <span class="string">'; domain='</span> + options.domain : <span class="string">''</span>,</span><br><span class="line">		            options.secure ? <span class="string">'; secure'</span> : <span class="string">''</span></span><br><span class="line">		        ].join(<span class="string">''</span>));</span><br><span class="line">		    &#125;</span><br><span class="line">		    <span class="comment">// key and possibly options given, get cookie...</span></span><br><span class="line">		    options = value || &#123;&#125;;</span><br><span class="line">		    <span class="keyword">var</span> result, decode = options.raw ? <span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123; <span class="keyword">return</span> s; &#125; : <span class="built_in">decodeURIComponent</span>;</span><br><span class="line">		    <span class="keyword">return</span> (result = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'(?:^|; )'</span> + <span class="built_in">encodeURIComponent</span>(key) + <span class="string">'=([^;]*)'</span>).exec(<span class="built_in">document</span>.cookie)) ? decode(result[<span class="number">1</span>]) : <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/reward/wechat-pay.png" alt="ski WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/easyui-util/" rel="next" title="EasyUI工具类扩展">
+                <i class="fa fa-chevron-left"></i> EasyUI工具类扩展
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/weixin-share/" rel="prev" title="微信分享js自定义配置">
+                微信分享js自定义配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/portrait_1.jpg" alt="ski">
+          <p class="site-author-name" itemprop="name">ski</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="http://www.xonepage.com/" target="_blank" title="Intro">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Intro
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://git.oschina.net/xkh" target="_blank" title="GitOs">
+                  
+                    <i class="fa fa-fw fa-github-alt"></i>
+                  
+                  GitOs
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.edlad.com/" title="edLad" target="_blank">edLad</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xonepage.com/" title="me" target="_blank">me</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【javascript原生工具扩展】"><span class="nav-number">1.</span> <span class="nav-text">【javascript原生工具扩展】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Date工具类"><span class="nav-number">1.1.</span> <span class="nav-text">Date工具类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String工具类"><span class="nav-number">1.2.</span> <span class="nav-text">String工具类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array工具类"><span class="nav-number">1.3.</span> <span class="nav-text">Array工具类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器操作"><span class="nav-number">1.4.</span> <span class="nav-text">浏览器操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【jQuery工具扩展】"><span class="nav-number">2.</span> <span class="nav-text">【jQuery工具扩展】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jquery公共方法"><span class="nav-number">2.1.</span> <span class="nav-text">jquery公共方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jquery-cookie"><span class="nav-number">2.2.</span> <span class="nav-text">jquery cookie</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ski</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" rel="external nofollow" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aWzs2xJ7wJMGwPKkNEI6VGLA-gzGzoHsz", "Sv0OFa34rCmPrkkFINnAGYWi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

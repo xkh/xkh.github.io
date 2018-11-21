@@ -1,0 +1,1103 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="baidu-site-verification" content="lxfu2sEmyy">
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="邢凯航的博客 邢凯航 Web前端博客 H5前端 ski的博客 xingkaihang xkh ski">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+<meta name="description" content="这里封装了一些easyui常用的工具类，提高工作效率咯">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EasyUI工具类扩展">
+<meta property="og:url" content="http://blog.xonepage.com/easyui-util/index.html">
+<meta property="og:site_name" content="假面&#39;">
+<meta property="og:description" content="这里封装了一些easyui常用的工具类，提高工作效率咯">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-29T09:25:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EasyUI工具类扩展">
+<meta name="twitter:description" content="这里封装了一些easyui常用的工具类，提高工作效率咯">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.xonepage.com/easyui-util/">
+
+
+
+
+
+  <title>EasyUI工具类扩展 | 假面'</title>
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s13.cnzz.com/z_stat.php?id=1261962361&web_id=1261962361" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">假面'</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">博客</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://blog.xonepage.com/easyui-util/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ski">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/portrait_1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="假面'">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                EasyUI工具类扩展
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-02T00:00:00+08:00">
+                2017-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/about/EasyUI/" itemprop="url" rel="index">
+                    <span itemprop="name">EasyUI</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/easyui-util/" class="leancloud_visitors" data-flag-title="EasyUI工具类扩展">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  这里封装了一些easyui常用的工具类，提高工作效率咯
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="【前言】"><a href="#【前言】" class="headerlink" title="【前言】"></a>【前言】</h3><blockquote>
+<p>如果对easyui还未有一定了解，引用参考<a href="http://www.runoob.com/jeasyui/jqueryeasyui-tutorial.html" target="_blank" rel="noopener">easyui 穿越&gt;&gt;</a></p>
+</blockquote>
+<h3 id="【示例】"><a href="#【示例】" class="headerlink" title="【示例】"></a>【示例】</h3><h4 id="1-扩展validate规则"><a href="#1-扩展validate规则" class="headerlink" title="1.扩展validate规则"></a>1.扩展validate规则</h4><blockquote>
+<p>使用:<code>data-options=&quot;validType:&#39;mobile&#39;&quot; //验证手机号</code></p>
+</blockquote>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">$.extend($.fn.validatebox.defaults.rules, &#123;</span><br><span class="line">    //最大长度</span><br><span class="line">    maxLength: &#123;</span><br><span class="line">        validator: function(value, param)&#123;</span><br><span class="line">            <span class="keyword">return</span> value.length &lt;= param[<span class="number">0</span>];</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '您输入的文字太多了! '</span><br><span class="line">    &#125;,</span><br><span class="line">    //最小长度</span><br><span class="line">    minLength: &#123;</span><br><span class="line">        validator: function(value, param)&#123;</span><br><span class="line">            <span class="keyword">return</span> value.length &gt;= param[<span class="number">0</span>];</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '您输入的文字太少了! '</span><br><span class="line">    &#125;,</span><br><span class="line">    mobile: &#123;</span><br><span class="line">    	validator: function(value)&#123;</span><br><span class="line">            <span class="keyword">return</span> /^(<span class="number">13</span>|<span class="type">14</span>|<span class="type">15</span>|<span class="type">17</span>|<span class="type">18</span>|<span class="type">19</span>)\d&#123;<span class="number">9</span>&#125;$/i.test(value);</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '手机号码格式不正确! '</span><br><span class="line">    &#125;,</span><br><span class="line">    domainSeo: &#123;</span><br><span class="line">        validator: function(value)&#123;</span><br><span class="line">            <span class="keyword">return</span> /^[\w]+\.([\w]+\.)*((me)|<span class="type">(co</span>)|<span class="type">(am</span>)|<span class="type">(ca</span>)|<span class="type">(com</span>)|<span class="type">(net</span>)|<span class="type">(org</span>)|<span class="type">(gov</span>\.cn)|<span class="type">(info</span>)|<span class="type">(cc</span>)|<span class="type">(com</span>\.cn)|<span class="type">(net</span>\.cn)|<span class="type">(org</span>\.cn)|<span class="type">(name</span>)|<span class="type">(biz</span>)|<span class="type">(tv</span>)|<span class="type">(cn</span>)|<span class="type">(mobi</span>)|<span class="type">(name</span>)|<span class="type">(sh</span>)|<span class="type">(ac</span>)|<span class="type">(io</span>)|<span class="type">(tw</span>)|<span class="type">(com</span>\.tw)|<span class="type">(hk</span>)|<span class="type">(com</span>\.hk)|<span class="type">(ws</span>)|<span class="type">(travel</span>)|<span class="type">(us</span>)|<span class="type">(tm</span>)|<span class="type">(la</span>)|<span class="type">(me</span>\.uk)|<span class="type">(org</span>\.uk)|<span class="type">(ltd</span>\.uk)|<span class="type">(plc</span>\.uk)|<span class="type">(in</span>)|<span class="type">(eu</span>)|<span class="type">(it</span>)|<span class="type">(jp</span>))$/.test(value);</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '请输入正确的域名! '</span><br><span class="line">    &#125;,</span><br><span class="line">    equals: &#123;</span><br><span class="line">        validator: function(value,param)&#123;</span><br><span class="line">            <span class="keyword">return</span> value == $(param[<span class="number">0</span>]).val();</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '两次输入的内容不匹配.'</span><br><span class="line">    &#125;,</span><br><span class="line">    xFloat: &#123;</span><br><span class="line">        validator: function(value,param)&#123;</span><br><span class="line">            <span class="keyword">return</span> /^[<span class="number">0</span><span class="number">-99</span>]+(.[<span class="number">0</span><span class="number">-99</span>]&#123;<span class="number">1</span>&#125;)?$/.test(value) &amp;&amp; value&lt;=<span class="number">100</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '请输入=&gt;<span class="number">0</span>且&lt;=<span class="number">100</span>的整数或一位小数'</span><br><span class="line">    &#125;,</span><br><span class="line">    xInt: &#123;</span><br><span class="line">        validator: function(value,param)&#123;</span><br><span class="line">            <span class="keyword">return</span> /^[<span class="number">0</span><span class="number">-9</span>]\d*$/.test(value);</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '请输入=&gt;<span class="number">0</span>的整数'</span><br><span class="line">    &#125;,</span><br><span class="line">    xBank: &#123;</span><br><span class="line">        validator: function(value,param)&#123;</span><br><span class="line">            <span class="keyword">return</span> /^(\d&#123;<span class="number">16</span>&#125;|<span class="type">\d</span>&#123;<span class="number">19</span>&#125;)$/.test(value);</span><br><span class="line">        &#125;,</span><br><span class="line">        message: '银行卡格式错误'</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="2-扩展datagrid方法"><a href="#2-扩展datagrid方法" class="headerlink" title="2.扩展datagrid方法"></a>2.扩展datagrid方法</h4><blockquote>
+<p>使用:<code>$(&#39;#id&#39;).datagrid(&#39;getEditingRowIndexs&#39;); //获取当前datagrid中在编辑状态的行编号列表</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">$.extend($.fn.datagrid.methods, &#123;</span><br><span class="line">    <span class="comment">//datagrid反选</span></span><br><span class="line">    reverseSelect: <span class="function"><span class="keyword">function</span>(<span class="params">jq</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jq.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> select_rows = $(<span class="keyword">this</span>).datagrid(<span class="string">'getSelections'</span>);</span><br><span class="line">            <span class="keyword">var</span> select_index;</span><br><span class="line">            <span class="keyword">var</span> now_index;</span><br><span class="line">            <span class="keyword">var</span> select_index_arr = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> X <span class="keyword">in</span> select_rows)&#123;</span><br><span class="line">                select_index = $(<span class="keyword">this</span>).datagrid(<span class="string">'getRowIndex'</span>, select_rows[X]);</span><br><span class="line">                select_index_arr.push(select_index);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> all_rows = $(<span class="keyword">this</span>).datagrid(<span class="string">'getRows'</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> X <span class="keyword">in</span> all_rows)&#123;</span><br><span class="line">                now_index = $(<span class="keyword">this</span>).datagrid(<span class="string">'getRowIndex'</span>, all_rows[X]);</span><br><span class="line">                <span class="keyword">if</span> ($.inArray(now_index, select_index_arr) == <span class="number">-1</span>)&#123;</span><br><span class="line">                    $(<span class="keyword">this</span>).datagrid(<span class="string">'selectRow'</span>, now_index);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    $(<span class="keyword">this</span>).datagrid(<span class="string">'unselectRow'</span>, now_index);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">	&#125;,</span><br><span class="line">    <span class="comment">//保持当前的选择状态</span></span><br><span class="line">    keepSelect: <span class="function"><span class="keyword">function</span>(<span class="params">jq</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jq.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> self = $(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">var</span> select_rows = self.datagrid(<span class="string">'getSelections'</span>);</span><br><span class="line">            <span class="keyword">var</span> select_index;</span><br><span class="line">            <span class="keyword">var</span> now_index;</span><br><span class="line">            <span class="keyword">var</span> select_index_arr = [];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> X <span class="keyword">in</span> select_rows)&#123;</span><br><span class="line">                select_index = self.datagrid(<span class="string">'getRowIndex'</span>, select_rows[X]);</span><br><span class="line">                select_index_arr.push(select_index);</span><br><span class="line">            &#125;</span><br><span class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                self.datagrid(<span class="string">'unselectAll'</span>);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> Y <span class="keyword">in</span> select_index_arr)&#123;</span><br><span class="line">                    self.datagrid(<span class="string">'selectRow'</span>, select_index_arr[Y]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;, <span class="number">100</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">	&#125;,</span><br><span class="line">    <span class="comment">//增加编辑器</span></span><br><span class="line">    addEditor : <span class="function"><span class="keyword">function</span>(<span class="params">jq, param</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (param <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">            $.each(param, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> e = $(jq).datagrid(<span class="string">'getColumnOption'</span>, item.field);</span><br><span class="line">                e.editor = item.editor;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> e = $(jq).datagrid(<span class="string">'getColumnOption'</span>, param.field);</span><br><span class="line">            e.editor = param.editor;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//移除编辑器</span></span><br><span class="line">    removeEditor : <span class="function"><span class="keyword">function</span>(<span class="params">jq, param</span>) </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span> (param == <span class="literal">null</span>)&#123;</span><br><span class="line">			param = $(jq).datagrid(<span class="string">'getColumnFields'</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">        <span class="keyword">if</span> (param <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">            $.each(param, <span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> e = $(jq).datagrid(<span class="string">'getColumnOption'</span>, item);</span><br><span class="line">                e.editor = &#123;&#125;;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> e = $(jq).datagrid(<span class="string">'getColumnOption'</span>, param);</span><br><span class="line">            e.editor = &#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//获取编辑状态的行</span></span><br><span class="line">    getEditingRowIndexs: <span class="function"><span class="keyword">function</span>(<span class="params">jq</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> rows = $.data(jq[<span class="number">0</span>], <span class="string">"datagrid"</span>).panel.find(<span class="string">'.datagrid-row-editing'</span>);</span><br><span class="line">        <span class="keyword">var</span> indexs = [];</span><br><span class="line">        rows.each(<span class="function"><span class="keyword">function</span>(<span class="params">i, row</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> index = row.sectionRowIndex;</span><br><span class="line">            <span class="keyword">if</span> (indexs.indexOf(index) == <span class="number">-1</span>) &#123;</span><br><span class="line">                indexs.push(index);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> indexs;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="3-扩展datagrid-editors行内编辑工具类"><a href="#3-扩展datagrid-editors行内编辑工具类" class="headerlink" title="3.扩展datagrid-editors行内编辑工具类"></a>3.扩展datagrid-editors行内编辑工具类</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line">$.extend($.fn.datagrid.defaults.editors, &#123;</span><br><span class="line">    timespinner: &#123;</span><br><span class="line">        init: <span class="function"><span class="keyword">function</span>(<span class="params">container, options</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> input = $(<span class="string">'&lt;input class="easyui-timespinner"&gt;'</span>).appendTo(container);</span><br><span class="line">            options.formatter = <span class="function"><span class="keyword">function</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(time).format(<span class="string">"hh:mm"</span>);</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">return</span> input.timespinner(options);</span><br><span class="line">        &#125;,</span><br><span class="line">        getValue: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> $(target).timespinner(<span class="string">'getValue'</span>);</span><br><span class="line">      	&#125;,</span><br><span class="line">        setValue: <span class="function"><span class="keyword">function</span>(<span class="params">target, value</span>)</span>&#123;</span><br><span class="line">            $(target).timespinner(<span class="string">'setValue'</span>, value);</span><br><span class="line">        &#125;,</span><br><span class="line">        resize: <span class="function"><span class="keyword">function</span>(<span class="params">target, width</span>)</span>&#123;</span><br><span class="line">        	$(target).timespinner(<span class="string">'resize'</span>, width);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    combotree: &#123;</span><br><span class="line">    	init: <span class="function"><span class="keyword">function</span>(<span class="params">container, options</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> input = $(<span class="string">'&lt;input class="easyui-combotree"&gt;'</span>).appendTo(container);</span><br><span class="line">            <span class="keyword">return</span> input.combotree(options);</span><br><span class="line">        &#125;,</span><br><span class="line">        getValue: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">        	<span class="keyword">var</span> values = $(target).combotree(<span class="string">'getValues'</span>);</span><br><span class="line">        	<span class="keyword">var</span> real_values = [];     	</span><br><span class="line">        	<span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>,len = values.length;x &lt; len;x ++)&#123;</span><br><span class="line">        		<span class="keyword">if</span> (values[x] &amp;&amp; values[x] != <span class="string">''</span>)&#123;</span><br><span class="line">        			real_values.push(values[x]);</span><br><span class="line">        		&#125;</span><br><span class="line">        	&#125;</span><br><span class="line">            <span class="keyword">return</span> real_values.join(<span class="string">','</span>);</span><br><span class="line">      	&#125;,</span><br><span class="line">        setValue: <span class="function"><span class="keyword">function</span>(<span class="params">target, value</span>)</span>&#123;  	</span><br><span class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            	<span class="keyword">var</span> values = value.split(<span class="string">','</span>);</span><br><span class="line">            	$(target).combotree(<span class="string">'setValues'</span>, values);</span><br><span class="line">            	<span class="keyword">var</span> tree = $(target).combotree(<span class="string">'tree'</span>);</span><br><span class="line">	            <span class="keyword">var</span> nodes = tree.tree(<span class="string">'getChecked'</span>);</span><br><span class="line">	            <span class="keyword">var</span> parent;</span><br><span class="line">	            <span class="keyword">for</span> (<span class="keyword">var</span> x = <span class="number">0</span>,len = nodes.length;x &lt; len;x ++)&#123;</span><br><span class="line">	            	parent = tree.tree(<span class="string">'getParent'</span>, nodes[x][<span class="string">'target'</span>]);</span><br><span class="line">	            	<span class="keyword">while</span>(parent != <span class="literal">null</span>)&#123;</span><br><span class="line">	            		tree.tree(<span class="string">'expand'</span>, parent.target);</span><br><span class="line">	            		parent = tree.tree(<span class="string">'getParent'</span>, parent[<span class="string">'target'</span>]);</span><br><span class="line">	            	&#125;      	</span><br><span class="line">	            &#125;</span><br><span class="line">            &#125;, <span class="number">100</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        resize: <span class="function"><span class="keyword">function</span>(<span class="params">target, width</span>)</span>&#123;</span><br><span class="line">        	$(target).combotree(<span class="string">'resize'</span>, width);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    combobox: &#123;</span><br><span class="line">    	init: <span class="function"><span class="keyword">function</span>(<span class="params">container, options</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> input = $(<span class="string">'&lt;input class="easyui-combobox"&gt;'</span>).appendTo(container);</span><br><span class="line">            <span class="keyword">return</span> input.combobox(options);</span><br><span class="line">        &#125;,</span><br><span class="line">    	getValue : <span class="function"><span class="keyword">function</span>(<span class="params">jq</span>) </span>&#123;</span><br><span class="line">	        <span class="keyword">var</span> opts = $(jq).combobox(<span class="string">'options'</span>);</span><br><span class="line">	        <span class="keyword">if</span>(opts.multiple)&#123;</span><br><span class="line">	            <span class="keyword">var</span> values = $(jq).combobox(<span class="string">'getValues'</span>);</span><br><span class="line">	            <span class="keyword">if</span>(values.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">	                <span class="keyword">if</span>(values[<span class="number">0</span>]==<span class="string">''</span>||values[<span class="number">0</span>]==<span class="string">' '</span>)&#123;</span><br><span class="line">	                    <span class="keyword">return</span> values.join(<span class="string">','</span>).substring(<span class="number">1</span>);</span><br><span class="line">	                &#125;</span><br><span class="line">	            &#125;</span><br><span class="line">	            <span class="keyword">return</span> values.join(<span class="string">','</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">else</span></span><br><span class="line">	            <span class="keyword">return</span> $(jq).combobox(<span class="string">"getValue"</span>);</span><br><span class="line">	    &#125;,</span><br><span class="line">	    setValue : <span class="function"><span class="keyword">function</span>(<span class="params">jq, value</span>) </span>&#123;</span><br><span class="line">	        <span class="keyword">var</span> opts = $(jq).combobox(<span class="string">'options'</span>);</span><br><span class="line">	        <span class="keyword">if</span>(opts.multiple&amp;&amp;value.indexOf(opts.separator)!=<span class="number">-1</span>)&#123;<span class="comment">//多选且不只一个值</span></span><br><span class="line">	            <span class="keyword">var</span> values = value.split(opts.separator);</span><br><span class="line">	            $(jq).combobox(<span class="string">"setValues"</span>, values);</span><br><span class="line">	        &#125;</span><br><span class="line">	        <span class="keyword">else</span></span><br><span class="line">	            $(jq).combobox(<span class="string">"setValue"</span>, value);</span><br><span class="line">	    &#125;,</span><br><span class="line">        resize: <span class="function"><span class="keyword">function</span>(<span class="params">target, width</span>)</span>&#123;</span><br><span class="line">        	$(target).combobox(<span class="string">'resize'</span>, width);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    datetimebox: &#123;</span><br><span class="line">    	init: <span class="function"><span class="keyword">function</span>(<span class="params">container, options</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> input = $(<span class="string">'&lt;input class="easyui-datetimebox"&gt;'</span>).appendTo(container);</span><br><span class="line">            <span class="keyword">return</span> input.datetimebox(options);</span><br><span class="line">        &#125;,</span><br><span class="line">    	getValue : <span class="function"><span class="keyword">function</span>(<span class="params">jq</span>) </span>&#123;</span><br><span class="line">	        <span class="keyword">return</span> $(jq).datetimebox(<span class="string">"getValue"</span>);            </span><br><span class="line">	    &#125;,</span><br><span class="line">	    setValue : <span class="function"><span class="keyword">function</span>(<span class="params">jq, value</span>) </span>&#123;</span><br><span class="line">	    	$(jq).datetimebox(<span class="string">"setValue"</span>, value);</span><br><span class="line">	    &#125;,</span><br><span class="line">        resize: <span class="function"><span class="keyword">function</span>(<span class="params">target, width</span>)</span>&#123;</span><br><span class="line">        	$(target).datetimebox(<span class="string">'resize'</span>, width);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    uploadbox: &#123;</span><br><span class="line">    	init: <span class="function"><span class="keyword">function</span>(<span class="params">container, options</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> input = $(<span class="string">'&lt;input class="easyui-validatebox" readonly=true&gt;'</span>).appendTo(container);</span><br><span class="line">            <span class="keyword">return</span> input.validatebox(options);</span><br><span class="line">        &#125;,</span><br><span class="line">        destroy: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>)</span>&#123;</span><br><span class="line">            $(target).remove();</span><br><span class="line">        &#125;,</span><br><span class="line">    	getValue : <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">	        <span class="keyword">return</span> $(target).val();            </span><br><span class="line">	    &#125;,</span><br><span class="line">	    setValue : <span class="function"><span class="keyword">function</span>(<span class="params">target, value</span>) </span>&#123;</span><br><span class="line">	    	$(target).val(value);</span><br><span class="line">	    &#125;,</span><br><span class="line">        resize: <span class="function"><span class="keyword">function</span>(<span class="params">target, width</span>)</span>&#123;</span><br><span class="line">        	$(target)._outerWidth(width);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里只是easyui部分扩展组件,想了解更多js扩展请穿越-&gt;<a href="/2017/02/20/js-util/">js-util</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/reward/wechat-pay.png" alt="ski WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/js-object/" rel="next" title="javascript面向对象开发【待续】">
+                <i class="fa fa-chevron-left"></i> javascript面向对象开发【待续】
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/js-util/" rel="prev" title="javascript/jq工具类扩展">
+                javascript/jq工具类扩展 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/uploads/portrait_1.jpg" alt="ski">
+          <p class="site-author-name" itemprop="name">ski</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="http://www.xonepage.com/" target="_blank" title="Intro">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Intro
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a rel="external nofollow" href="https://git.oschina.net/xkh" target="_blank" title="GitOs">
+                  
+                    <i class="fa fa-fw fa-github-alt"></i>
+                  
+                  GitOs
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.edlad.com/" title="edLad" target="_blank">edLad</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xonepage.com/" title="me" target="_blank">me</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#【前言】"><span class="nav-number">1.</span> <span class="nav-text">【前言】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#【示例】"><span class="nav-number">2.</span> <span class="nav-text">【示例】</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-扩展validate规则"><span class="nav-number">2.1.</span> <span class="nav-text">1.扩展validate规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-扩展datagrid方法"><span class="nav-number">2.2.</span> <span class="nav-text">2.扩展datagrid方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-扩展datagrid-editors行内编辑工具类"><span class="nav-number">2.3.</span> <span class="nav-text">3.扩展datagrid-editors行内编辑工具类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ski</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" rel="external nofollow" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("aWzs2xJ7wJMGwPKkNEI6VGLA-gzGzoHsz", "Sv0OFa34rCmPrkkFINnAGYWi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

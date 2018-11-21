@@ -1,0 +1,14 @@
+# hexo robots.txt
+User-agent: * Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /history/
+Allow: /about/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: http://blog.xonepage.com/sitemap.xml
+Sitemap: http://blog.xonepage.com/baidusitemap.xml
