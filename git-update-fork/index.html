@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="假面&#39;">
 <meta property="og:description" content="Git同步远程fork地址的更新(命令指南)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T02:06:01.000Z">
+<meta property="og:updated_time" content="2019-04-12T03:44:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git更新fork仓库">
 <meta name="twitter:description" content="Git同步远程fork地址的更新(命令指南)">
@@ -425,9 +425,13 @@
 </blockquote>
 <h3 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h3><p>查看当前为fork配置的远程存储库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line">// origin	git@github.com:xkh/awesome-wechat-weapp.git (fetch)</span><br><span class="line">// origin	git@github.com:xkh/awesome-wechat-weapp.git (push)</span><br></pre></td></tr></table></figure></p>
 <h3 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h3><p>指定将与fork同步的新远程上游存储库地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add upstream https://xxx被fork的原始仓库地址</span><br><span class="line"></span><br><span class="line">//再次查看远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line">// origin	git@github.com:xkh/awesome-wechat-weapp.git (fetch)</span><br><span class="line">// origin	git@github.com:xkh/awesome-wechat-weapp.git (push)</span><br><span class="line">// upstream	https://github.com/justjavac/awesome-wechat-weapp (fetch)</span><br><span class="line">// upstream	https://github.com/justjavac/awesome-wechat-weapp (push)</span><br></pre></td></tr></table></figure></p>
-<h3 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h3><p>从上游仓库拉取分支和提交点，并会被存储在一个本地分支 <code>upstream/master</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">切换到本地主分支(如果不在master)。</span><br><span class="line">``` bash</span><br><span class="line">$ git checkout master</span><br></pre></td></tr></table></figure></p>
-<p>把<code>upstream/master</code>分支合并到本地<code>master</code>分支。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure></p>
-<p>提交到自己的fork地址，完成同步。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure></p>
+<h3 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h3><p>(1)、从上游仓库拉取分支和提交点，并会被存储在一个本地分支 <code>upstream/master</code>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br></pre></td></tr></table></figure>
+<p>(2)、切换到本地主分支(如果不在master)。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br></pre></td></tr></table></figure>
+<p>(3)、把<code>upstream/master</code>分支合并到本地<code>master</code>分支。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure>
+<p>(4)、提交到自己的fork地址，完成同步。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://blog.xonepage.com/git-update-fork/</loc>
-    <lastmod>2019-04-12T02:06:01.000Z</lastmod>
+    <lastmod>2019-04-12T03:44:44.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/git-submodule/</loc>
     <lastmod>2019-04-12T02:03:34.000Z</lastmod>
@@ -34,10 +34,10 @@
     <loc>http://blog.xonepage.com/easyui-edit/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/hexo-write/</loc>
+    <loc>http://blog.xonepage.com/html-escape/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/html-escape/</loc>
+    <loc>http://blog.xonepage.com/hexo-write/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-arttemplate/</loc>
