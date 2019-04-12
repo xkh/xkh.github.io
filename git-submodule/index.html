@@ -103,14 +103,14 @@
 
 <meta name="description" content="Git子模块应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git子模块">
+<meta property="og:title" content="Git子模块(未完待续)">
 <meta property="og:url" content="http://blog.xonepage.com/git-submodule/index.html">
 <meta property="og:site_name" content="假面&#39;">
 <meta property="og:description" content="Git子模块应用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-12T02:03:34.000Z">
+<meta property="og:updated_time" content="2019-04-12T03:52:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git子模块">
+<meta name="twitter:title" content="Git子模块(未完待续)">
 <meta name="twitter:description" content="Git子模块应用">
 
 
@@ -145,7 +145,7 @@
 
 
 
-  <title>Git子模块 | 假面'</title>
+  <title>Git子模块(未完待续) | 假面'</title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -333,7 +333,7 @@
             
             
               
-                Git子模块
+                Git子模块(未完待续)
               
             
           </h2>
@@ -388,7 +388,7 @@
 
           
           
-             <span id="/git-submodule/" class="leancloud_visitors" data-flag-title="Git子模块">
+             <span id="/git-submodule/" class="leancloud_visitors" data-flag-title="Git子模块(未完待续)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -423,11 +423,8 @@
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
 <p>也许我们经常会遇到：某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。<br>当然如果你拥有<code>私有的npm服务</code>也是可以做到，这里只讲如何通过<code>git submodule</code>来做公用库的管理及多人协作开发。</p>
 </blockquote>
-<h3 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h3><p>从上游仓库拉取分支和提交点，并会被存储在一个本地分支 <code>upstream/master</code><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">切换到本地主分支(如果不在master)。</span><br></pre></td></tr></table></figure></p>
-<p>$ git checkout master<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">把`upstream/master`分支合并到本地`master`分支。</span><br><span class="line">``` </span><br><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure></p>
-<p>提交到自己的fork地址，完成同步。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">push</span> <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure></p>
+<h3 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">### step2</span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### step3</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -644,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step1"><span class="nav-number">2.</span> <span class="nav-text">step1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step2"><span class="nav-number">3.</span> <span class="nav-text">step2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step3"><span class="nav-number">4.</span> <span class="nav-text">step3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step1"><span class="nav-number">2.</span> <span class="nav-text">step1</span></a></li></ol></div>
             
 
           </div>

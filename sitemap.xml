@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.xonepage.com/git-update-fork/</loc>
+    <loc>http://blog.xonepage.com/git-submodule/</loc>
     
-    <lastmod>2019-04-12T03:44:44.000Z</lastmod>
+    <lastmod>2019-04-12T03:52:19.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/git-submodule/</loc>
+    <loc>http://blog.xonepage.com/git-update-fork/</loc>
     
-    <lastmod>2019-04-12T02:03:34.000Z</lastmod>
+    <lastmod>2019-04-12T03:44:44.000Z</lastmod>
     
   </url>
   
@@ -79,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/html-escape/</loc>
-    
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xonepage.com/hexo-write/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
@@ -93,21 +86,14 @@
   </url>
   
   <url>
+    <loc>http://blog.xonepage.com/html-escape/</loc>
+    
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xonepage.com/js-arttemplate/</loc>
-    
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xonepage.com/js-call-apply/</loc>
-    
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xonepage.com/js-form-to-json/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -122,6 +108,20 @@
   
   <url>
     <loc>http://blog.xonepage.com/js-methods/</loc>
+    
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xonepage.com/js-form-to-json/</loc>
+    
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xonepage.com/js-call-apply/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -191,13 +191,6 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/react-ant-design/</loc>
-    
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xonepage.com/react-events/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
@@ -205,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/react-push-load/</loc>
+    <loc>http://blog.xonepage.com/react-ant-design/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -213,6 +206,13 @@
   
   <url>
     <loc>http://blog.xonepage.com/weixin-image/</loc>
+    
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xonepage.com/react-push-load/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -247,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/about/index.html</loc>
+    <loc>http://blog.xonepage.com/categories/index.html</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/categories/index.html</loc>
+    <loc>http://blog.xonepage.com/about/index.html</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
