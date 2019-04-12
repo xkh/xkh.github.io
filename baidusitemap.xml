@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.xonepage.com/git-update-fork/</loc>
+    <lastmod>2019-04-12T02:06:01.000Z</lastmod>
+  </url>  <url>
+    <loc>http://blog.xonepage.com/git-submodule/</loc>
+    <lastmod>2019-04-12T02:03:34.000Z</lastmod>
+  </url>  <url>
     <loc>http://blog.xonepage.com/web-pwa/</loc>
     <lastmod>2019-04-11T11:53:35.000Z</lastmod>
-  </url>  <url>
-    <loc>http://blog.xonepage.com/git-update-fork/</loc>
-    <lastmod>2019-04-11T11:51:57.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/git-mac-mend/</loc>
     <lastmod>2019-04-11T09:33:06.000Z</lastmod>
@@ -37,19 +40,19 @@
     <loc>http://blog.xonepage.com/html-escape/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-call-apply/</loc>
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-  </url>  <url>
     <loc>http://blog.xonepage.com/js-arttemplate/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-methods/</loc>
+    <loc>http://blog.xonepage.com/js-call-apply/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-form-to-json/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-localstorage/</loc>
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+  </url>  <url>
+    <loc>http://blog.xonepage.com/js-methods/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-object/</loc>

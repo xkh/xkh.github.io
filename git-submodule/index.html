@@ -101,17 +101,17 @@
 
 
 
-<meta name="description" content="解决js倒计时在应用后台/锁屏时出现时间暂停不准问题。">
+<meta name="description" content="Git子模块应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js倒计时在应用后台不执行">
-<meta property="og:url" content="http://blog.xonepage.com/js-update-countdown/index.html">
+<meta property="og:title" content="Git子模块">
+<meta property="og:url" content="http://blog.xonepage.com/git-submodule/index.html">
 <meta property="og:site_name" content="假面&#39;">
-<meta property="og:description" content="解决js倒计时在应用后台/锁屏时出现时间暂停不准问题。">
+<meta property="og:description" content="Git子模块应用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-29T09:25:41.000Z">
+<meta property="og:updated_time" content="2019-04-12T02:03:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js倒计时在应用后台不执行">
-<meta name="twitter:description" content="解决js倒计时在应用后台/锁屏时出现时间暂停不准问题。">
+<meta name="twitter:title" content="Git子模块">
+<meta name="twitter:description" content="Git子模块应用">
 
 
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.xonepage.com/js-update-countdown/">
+  <link rel="canonical" href="http://blog.xonepage.com/git-submodule/">
 
 
 
 
 
-  <title>js倒计时在应用后台不执行 | 假面'</title>
+  <title>Git子模块 | 假面'</title>
 </head>
 
 <body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -312,7 +312,7 @@
   
 
   <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://blog.xonepage.com/js-update-countdown/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xonepage.com/git-submodule/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sky">
@@ -333,7 +333,7 @@
             
             
               
-                js倒计时在应用后台不执行
+                Git子模块
               
             
           </h2>
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T00:00:00+08:00">
-                2017-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-12T00:00:00+08:00">
+                2019-04-12
               </time>
             
 
@@ -371,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/about/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/about/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -388,7 +388,7 @@
 
           
           
-             <span id="/js-update-countdown/" class="leancloud_visitors" data-flag-title="js倒计时在应用后台不执行">
+             <span id="/git-submodule/" class="leancloud_visitors" data-flag-title="Git子模块">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -406,7 +406,7 @@
 
           
               <div class="post-description">
-                  解决js倒计时在应用后台/锁屏时出现时间暂停不准问题。
+                  Git子模块应用
               </div>
           
 
@@ -420,17 +420,14 @@
       
 
       
-        <h4 id="方法1：HTML-lt-meta-gt-标签"><a href="#方法1：HTML-lt-meta-gt-标签" class="headerlink" title="方法1：HTML&lt;meta&gt;标签"></a>方法1：HTML<code>&lt;meta&gt;</code>标签</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"pragma"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt; </span><br><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"cache-control"</span> <span class="attribute">content</span>=<span class="string">"no-cache"</span>&gt; </span><br><span class="line">&lt;meta <span class="attribute">http-equiv</span>=<span class="string">"expires"</span> <span class="attribute">content</span>=<span class="string">"0"</span>&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在meta里进行设置，设置页面nocache，每次访问次页面，均需要从服务器重新获取，而不是使用缓存中读取,</li>
-<li>expires设定过期时间，一旦过期就必须请求服务器，</li>
-<li>expries出现在http-equiv属性中，使用content属性表示页面缓存的过期时间</li>
-<li>expries=0，缓存过期前的分钟数。若用户在页面过期前返回该页面，就会显示缓存的版本页　　　</li>
-</ul>
-<h4 id="方法2：visibilitychange事件【推荐】"><a href="#方法2：visibilitychange事件【推荐】" class="headerlink" title="方法2：visibilitychange事件【推荐】"></a>方法2：visibilitychange事件【推荐】</h4><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'visibilitychange'</span>, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">document</span>.hidden)&#123;</span><br><span class="line">        <span class="regexp">//</span>如果重新打开应用视图 更新倒计时</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>visibilitychange</code>事件监听用户离开/回来行为</li>
-</ul>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><blockquote>
+<p>也许我们经常会遇到：某个工作中的项目需要包含并使用另一个项目。 也许是第三方库，或者你独立开发的，用于多个父项目的库。 现在问题来了：你想要把它们当做两个独立的项目，同时又想在一个项目中使用另一个。<br>当然如果你拥有<code>私有的npm服务</code>也是可以做到，这里只讲如何通过<code>git submodule</code>来做公用库的管理及多人协作开发。</p>
+</blockquote>
+<h3 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h3><p>从上游仓库拉取分支和提交点，并会被存储在一个本地分支 <code>upstream/master</code><br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch upstream</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">切换到本地主分支(如果不在master)。</span><br></pre></td></tr></table></figure></p>
+<p>$ git checkout master<br><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">把`upstream/master`分支合并到本地`master`分支。</span><br><span class="line">``` </span><br><span class="line">$ git merge upstream/master</span><br></pre></td></tr></table></figure></p>
+<p>提交到自己的fork地址，完成同步。<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">push</span> <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -483,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/weixin-image/" rel="next" title="微信图像操作">
-                <i class="fa fa-chevron-left"></i> 微信图像操作
+              <a href="/web-pwa/" rel="next" title="渐进式Web应用(PWA)未完待续">
+                <i class="fa fa-chevron-left"></i> 渐进式Web应用(PWA)未完待续
               </a>
             
           </div>
@@ -492,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/html-meta/" rel="prev" title="html-meta">
-                html-meta <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -651,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法1：HTML-lt-meta-gt-标签"><span class="nav-number">1.</span> <span class="nav-text">方法1：HTML&lt;meta&gt;标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法2：visibilitychange事件【推荐】"><span class="nav-number">2.</span> <span class="nav-text">方法2：visibilitychange事件【推荐】</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step1"><span class="nav-number">2.</span> <span class="nav-text">step1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step2"><span class="nav-number">3.</span> <span class="nav-text">step2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step3"><span class="nav-number">4.</span> <span class="nav-text">step3</span></a></li></ol></div>
             
 
           </div>
