@@ -154,6 +154,30 @@
 
 
 
+	<div id="vk_api_transport"></div>
+	<script type="text/javascript">
+		window.vkAsyncInit = function() {
+			VK.init({
+				apiId: aWzs2xJ7wJMGwPKkNEI6VGLA-gzGzoHsz
+			});
+
+			
+
+			
+				VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+			
+		};
+		setTimeout(function() {
+			var el = document.createElement("script");
+			el.type = "text/javascript";
+			el.src = "//vk.com/js/api/openapi.js";
+			el.async = true;
+			document.getElementById("vk_api_transport").appendChild(el);
+		}, 0);
+	</script>
+
+
+
 
 
 
@@ -325,6 +349,8 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="vk_comments"></div>
     
   </div>
 
