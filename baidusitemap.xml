@@ -28,6 +28,9 @@
     <loc>http://blog.xonepage.com/ajax-js-plug/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
+    <loc>http://blog.xonepage.com/easyui-edit/</loc>
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+  </url>  <url>
     <loc>http://blog.xonepage.com/css-triangle/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
@@ -37,13 +40,10 @@
     <loc>http://blog.xonepage.com/html-escape/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/easyui-edit/</loc>
+    <loc>http://blog.xonepage.com/js-arttemplate/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-call-apply/</loc>
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-  </url>  <url>
-    <loc>http://blog.xonepage.com/js-arttemplate/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-form-to-json/</loc>
@@ -67,10 +67,10 @@
     <loc>http://blog.xonepage.com/js-upload-image/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-url-param/</loc>
+    <loc>http://blog.xonepage.com/js-upload-qiniu/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-upload-qiniu/</loc>
+    <loc>http://blog.xonepage.com/js-url-param/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/mac-phpredis/</loc>
@@ -79,10 +79,10 @@
     <loc>http://blog.xonepage.com/note-cmd/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/react-ant-design/</loc>
+    <loc>http://blog.xonepage.com/note-hotkeys/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/note-hotkeys/</loc>
+    <loc>http://blog.xonepage.com/react-ant-design/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/react-events/</loc>
