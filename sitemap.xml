@@ -11,7 +11,7 @@
   <url>
     <loc>http://blog.xonepage.com/web-pwa/</loc>
     
-    <lastmod>2019-04-22T08:12:47.000Z</lastmod>
+    <lastmod>2019-04-23T02:40:14.000Z</lastmod>
     
   </url>
   
@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/easyui-edit/</loc>
-    
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.xonepage.com/hexo-write/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
@@ -93,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-arttemplate/</loc>
+    <loc>http://blog.xonepage.com/easyui-edit/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -101,6 +94,13 @@
   
   <url>
     <loc>http://blog.xonepage.com/js-call-apply/</loc>
+    
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.xonepage.com/js-arttemplate/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-upload-qiniu/</loc>
+    <loc>http://blog.xonepage.com/js-url-param/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-url-param/</loc>
+    <loc>http://blog.xonepage.com/js-upload-qiniu/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/note-hotkeys/</loc>
+    <loc>http://blog.xonepage.com/react-ant-design/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/react-ant-design/</loc>
+    <loc>http://blog.xonepage.com/note-hotkeys/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
