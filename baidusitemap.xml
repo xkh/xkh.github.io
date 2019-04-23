@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.xonepage.com/git-submodule/</loc>
+    <lastmod>2019-04-23T02:40:23.000Z</lastmod>
+  </url>  <url>
     <loc>http://blog.xonepage.com/web-pwa/</loc>
     <lastmod>2019-04-22T08:12:47.000Z</lastmod>
-  </url>  <url>
-    <loc>http://blog.xonepage.com/git-submodule/</loc>
-    <lastmod>2019-04-12T06:15:51.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/git-update-fork/</loc>
     <lastmod>2019-04-12T03:44:44.000Z</lastmod>
@@ -52,10 +52,10 @@
     <loc>http://blog.xonepage.com/js-localstorage/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-object/</loc>
+    <loc>http://blog.xonepage.com/js-methods/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
-    <loc>http://blog.xonepage.com/js-methods/</loc>
+    <loc>http://blog.xonepage.com/js-object/</loc>
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
   </url>  <url>
     <loc>http://blog.xonepage.com/js-timestamp/</loc>
