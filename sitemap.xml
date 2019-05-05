@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.xonepage.com/web-pwa/</loc>
+    
+    <lastmod>2019-05-05T10:59:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xonepage.com/about/index.html</loc>
     
     <lastmod>2019-04-23T05:54:58.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.xonepage.com/git-submodule/</loc>
     
     <lastmod>2019-04-23T03:14:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xonepage.com/web-pwa/</loc>
-    
-    <lastmod>2019-04-23T02:40:14.000Z</lastmod>
     
   </url>
   
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/css-triangle/</loc>
+    <loc>http://blog.xonepage.com/ajax-js-plug/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/ajax-js-plug/</loc>
+    <loc>http://blog.xonepage.com/css-triangle/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -107,14 +107,14 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-call-apply/</loc>
+    <loc>http://blog.xonepage.com/js-form-to-json/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-form-to-json/</loc>
+    <loc>http://blog.xonepage.com/js-call-apply/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
