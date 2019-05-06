@@ -4,7 +4,7 @@
   <url>
     <loc>http://blog.xonepage.com/web-pwa/</loc>
     
-    <lastmod>2019-05-05T10:59:26.000Z</lastmod>
+    <lastmod>2019-05-05T11:08:58.000Z</lastmod>
     
   </url>
   
@@ -100,6 +100,13 @@
   </url>
   
   <url>
+    <loc>http://blog.xonepage.com/js-call-apply/</loc>
+    
+    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.xonepage.com/js-arttemplate/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
@@ -108,13 +115,6 @@
   
   <url>
     <loc>http://blog.xonepage.com/js-form-to-json/</loc>
-    
-    <lastmod>2018-10-29T09:25:41.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.xonepage.com/js-call-apply/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -149,14 +149,14 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-update-countdown/</loc>
+    <loc>http://blog.xonepage.com/js-upload-image/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/js-upload-image/</loc>
+    <loc>http://blog.xonepage.com/js-update-countdown/</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/categories/index.html</loc>
+    <loc>http://blog.xonepage.com/tags/index.html</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     
@@ -268,7 +268,7 @@
   </url>
   
   <url>
-    <loc>http://blog.xonepage.com/tags/index.html</loc>
+    <loc>http://blog.xonepage.com/categories/index.html</loc>
     
     <lastmod>2018-10-29T09:25:41.000Z</lastmod>
     

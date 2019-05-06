@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="假面&#39;">
 <meta property="og:description" content="PWA(Progressive web apps)，运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台 Web 应用程序。这些应用无处不在、功能丰富，使其具有与原生应用相同的用户体验优势">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T10:59:26.000Z">
+<meta property="og:updated_time" content="2019-05-05T11:08:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="渐进式Web应用(PWA)系列一">
 <meta name="twitter:description" content="PWA(Progressive web apps)，运用现代的 Web API 以及传统的渐进式增强策略来创建跨平台 Web 应用程序。这些应用无处不在、功能丰富，使其具有与原生应用相同的用户体验优势">
@@ -390,7 +390,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="更新于：2019-05-05 18:59:26" itemprop="dateModified" datetime="2019-05-05T18:59:26+08:00">2019-05-05</time>
+                <time title="更新于：2019-05-05 19:08:58" itemprop="dateModified" datetime="2019-05-05T19:08:58+08:00">2019-05-05</time>
               
             
           </span>
@@ -535,23 +535,6 @@
 <li>Application: <code>Update on reload</code>;</li>
 <li>Cache Storage;</li>
 </ul>
-<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><ul>
-<li>结构化：SQL、indexedDB</li>
-<li>键／值：Cache api、local storage</li>
-<li>字节流：文件系统、云存储</li>
-</ul>
-<h3 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h3><ul>
-<li>会话持久化：session storage api</li>
-<li>设备持久化：cache api</li>
-<li>全局持久化：google云存储</li>
-</ul>
-<h3 id="缓存逐出"><a href="#缓存逐出" class="headerlink" title="缓存逐出"></a>缓存逐出</h3><ul>
-<li>chrome55之后“持久化”</li>
-</ul>
-<h3 id="indexedDB库"><a href="#indexedDB库" class="headerlink" title="indexedDB库"></a>indexedDB库</h3><ul>
-<li>流行库：localForage(8k)、Dexie(16k)…</li>
-<li>可能存在的问题：写入失败、数据被用户修改或删除、存储的数据过期处理、indexedDB的读写、结构化克隆会在主线程进行</li>
-</ul>
 <h3 id="添加到主屏幕"><a href="#添加到主屏幕" class="headerlink" title="添加到主屏幕"></a>添加到主屏幕</h3><ul>
 <li>manifest.json配置<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"short_name"</span>: <span class="string">"短名称"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"这是一个完整名称"</span>,</span><br><span class="line">    <span class="attr">"icon"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"src"</span>: <span class="string">"icon.png"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"image/png"</span>,</span><br><span class="line">            <span class="attr">"sizes"</span>: <span class="string">"48x48"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"start_url"</span>: <span class="string">"index.html"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -569,7 +552,7 @@
 <li>后续，再考虑其他的特性，离线消息推送等</li>
 <li>资源：sw-toolbox（针对动态/运行时请求的离线缓存）、sw-precache（针对静态资产/Application Shell 的离线预缓存)</li>
 </ul>
-<h3 id="支持力度"><a href="#支持力度" class="headerlink" title="支持力度"></a>支持力度</h3><p>基于<strong><a href="https://caniuse.com/" target="_blank" rel="noopener">Can i use</a></strong>，截止<code>2019-04-16</code>的最新支持度(pc &amp;&amp; mobile);</p>
+<h4 id="支持力度"><a href="#支持力度" class="headerlink" title="支持力度"></a>支持力度</h4><p>基于<strong><a href="https://caniuse.com/" target="_blank" rel="noopener">Can i use</a></strong>，截止<code>2019-04-16</code>的最新支持度(pc &amp;&amp; mobile);</p>
 <table>
 <thead>
 <tr>
@@ -606,7 +589,35 @@
 </tr>
 </tbody>
 </table>
-<p><a href="https://lavas.baidu.com/ready" target="_blank" rel="noopener">百度整理的API支持列表</a><br><a href="https://jakearchibald.github.io/isserviceworkerready/#moar" target="_blank" rel="noopener">最新API支持列表</a></p>
+<h3 id="相关知识"><a href="#相关知识" class="headerlink" title="相关知识"></a>相关知识</h3><ol>
+<li>数据模型</li>
+</ol>
+<ul>
+<li>结构化：SQL、indexedDB</li>
+<li>键／值：Cache api、local storage</li>
+<li>字节流：文件系统、云存储</li>
+</ul>
+<ol start="2">
+<li>持久化</li>
+</ol>
+<ul>
+<li>会话持久化：session storage api</li>
+<li>设备持久化：cache api</li>
+<li>全局持久化：google云存储</li>
+</ul>
+<ol start="3">
+<li>缓存逐出</li>
+</ol>
+<ul>
+<li>chrome55之后“持久化”</li>
+</ul>
+<ol start="4">
+<li>indexedDB库</li>
+</ol>
+<ul>
+<li>流行库：localForage(8k)、Dexie(16k)…</li>
+<li>可能存在的问题：写入失败、数据被用户修改或删除、存储的数据过期处理、indexedDB的读写、结构化克隆会在主线程进行<br><a href="https://lavas.baidu.com/ready" target="_blank" rel="noopener">百度整理的API支持列表</a><br><a href="https://jakearchibald.github.io/isserviceworkerready/#moar" target="_blank" rel="noopener">最新API支持列表</a></li>
+</ul>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用:"></a>应用:</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Advantages" target="_blank" rel="noopener">PWA的优势</a><br><a href="https://www.html5rocks.com/zh/tutorials/appcache/beginner/" target="_blank" rel="noopener">AppCache</a><br><a href="https://www.html5rocks.com/zh/tutorials/workers/basics/" target="_blank" rel="noopener">Web Worker</a><br><a href="https://developers.google.cn/web/fundamentals/architecture/app-shell" target="_blank" rel="noopener">App Shell</a><br><a href="https://developers.google.cn/web/progressive-web-apps/checklist" target="_blank" rel="noopener">是否为完整渐进式Web应用核对表</a></p>
 <h3 id="引用参考"><a href="#引用参考" class="headerlink" title="引用参考"></a>引用参考</h3><p><a href="https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/" target="_blank" rel="noopener">饿了么的PWA升级实践</a></p>
 <p><a href="https://lavas.baidu.com/pwa/architecture/the-app-shell-model" target="_blank" rel="noopener">https://lavas.baidu.com/pwa/architecture/the-app-shell-model</a> 待续<br><a href="https://segmentfault.com/a/1190000015330282" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015330282</a><br><a href="https://kailian.github.io/2017/03/01/service-worker#" target="_blank" rel="noopener">https://kailian.github.io/2017/03/01/service-worker#</a><br><a href="https://developers.google.cn/web/fundamentals/architecture/app-shell" target="_blank" rel="noopener">https://developers.google.cn/web/fundamentals/architecture/app-shell</a><br><a href="https://juejin.im/post/5a6c86e451882573505174e7" target="_blank" rel="noopener">https://juejin.im/post/5a6c86e451882573505174e7</a><br><a href="https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/" target="_blank" rel="noopener">https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/</a></p>
@@ -881,7 +892,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点优势"><span class="nav-number">2.</span> <span class="nav-text">特点优势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可靠-即使在不稳定的网络环境下，也能瞬间加载并展现"><span class="nav-number">2.1.</span> <span class="nav-text">可靠 - 即使在不稳定的网络环境下，也能瞬间加载并展现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#体验-快速响应，并且有平滑的动画响应用户的操作"><span class="nav-number">2.2.</span> <span class="nav-text">体验 - 快速响应，并且有平滑的动画响应用户的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#粘性-像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面"><span class="nav-number">2.3.</span> <span class="nav-text">粘性 - 像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Worker-以下简称SW"><span class="nav-number">3.</span> <span class="nav-text">Service Worker(以下简称SW)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#由来："><span class="nav-number">3.1.</span> <span class="nav-text">由来：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点："><span class="nav-number">3.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用："><span class="nav-number">3.3.</span> <span class="nav-text">使用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期"><span class="nav-number">3.4.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件"><span class="nav-number">3.5.</span> <span class="nav-text">事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SW调试"><span class="nav-number">4.</span> <span class="nav-text">SW调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型"><span class="nav-number">5.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持久化"><span class="nav-number">6.</span> <span class="nav-text">持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存逐出"><span class="nav-number">7.</span> <span class="nav-text">缓存逐出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexedDB库"><span class="nav-number">8.</span> <span class="nav-text">indexedDB库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加到主屏幕"><span class="nav-number">9.</span> <span class="nav-text">添加到主屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络推送通知"><span class="nav-number">10.</span> <span class="nav-text">网络推送通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PWA改造"><span class="nav-number">11.</span> <span class="nav-text">PWA改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持力度"><span class="nav-number">12.</span> <span class="nav-text">支持力度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">13.</span> <span class="nav-text">应用:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用参考"><span class="nav-number">14.</span> <span class="nav-text">引用参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点优势"><span class="nav-number">2.</span> <span class="nav-text">特点优势</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可靠-即使在不稳定的网络环境下，也能瞬间加载并展现"><span class="nav-number">2.1.</span> <span class="nav-text">可靠 - 即使在不稳定的网络环境下，也能瞬间加载并展现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#体验-快速响应，并且有平滑的动画响应用户的操作"><span class="nav-number">2.2.</span> <span class="nav-text">体验 - 快速响应，并且有平滑的动画响应用户的操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#粘性-像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面"><span class="nav-number">2.3.</span> <span class="nav-text">粘性 - 像设备上的原生应用，具有沉浸式的用户体验，用户可以添加到桌面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Worker-以下简称SW"><span class="nav-number">3.</span> <span class="nav-text">Service Worker(以下简称SW)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#由来："><span class="nav-number">3.1.</span> <span class="nav-text">由来：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点："><span class="nav-number">3.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用："><span class="nav-number">3.3.</span> <span class="nav-text">使用：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生命周期"><span class="nav-number">3.4.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件"><span class="nav-number">3.5.</span> <span class="nav-text">事件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SW调试"><span class="nav-number">4.</span> <span class="nav-text">SW调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加到主屏幕"><span class="nav-number">5.</span> <span class="nav-text">添加到主屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络推送通知"><span class="nav-number">6.</span> <span class="nav-text">网络推送通知</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PWA改造"><span class="nav-number">7.</span> <span class="nav-text">PWA改造</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#支持力度"><span class="nav-number">7.1.</span> <span class="nav-text">支持力度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关知识"><span class="nav-number">8.</span> <span class="nav-text">相关知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">9.</span> <span class="nav-text">应用:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用参考"><span class="nav-number">10.</span> <span class="nav-text">引用参考</span></a></li></ol></div>
             
 
           </div>
